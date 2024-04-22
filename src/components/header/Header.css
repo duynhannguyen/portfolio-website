@@ -1,4 +1,7 @@
 .header-wrap {
-  border: 1px solid #3c0753;
-  padding: 8px;
+  padding: 8px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px solid #3c0753;
 }/*# sourceMappingURL=Header.css.map */

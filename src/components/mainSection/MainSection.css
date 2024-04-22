@@ -1,1 +1,4 @@
-/*# sourceMappingURL=MainSection.css.map */
+.main-section-wrap {
+  display: flex;
+  gap: 10px;
+}/*# sourceMappingURL=MainSection.css.map */

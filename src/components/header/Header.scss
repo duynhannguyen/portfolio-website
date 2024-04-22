@@ -1,6 +1,9 @@
-@import '../../variables';
+@import "../../variables";
 
 .header-wrap {
-  border: 1px solid $borderDarkMode;
-  padding: 8px;
+  padding: 8px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px solid $borderDarkMode;
 }
