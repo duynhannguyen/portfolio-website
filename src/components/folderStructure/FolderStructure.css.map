@@ -1,1 +1,1 @@
-{"version":3,"sources":["FolderStructure.scss","FolderStructure.css"],"names":[],"mappings":"AAAA;EACE,UAAA;ACCF","file":"FolderStructure.css"}
+{"version":3,"sources":["FolderStructure.scss","../../_mixin.scss","FolderStructure.css"],"names":[],"mappings":"AAGA;EACE,UAAA;ECeE,+BAAA;AChBJ","file":"FolderStructure.css"}

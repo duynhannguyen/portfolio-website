@@ -1,3 +1,15 @@
 .activity-bar-wrap {
-  width: 30%;
+  padding-top: 20px;
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  align-items: center;
+  border-right: 2px solid #3c0753;
+}
+.activity-bar-wrap .icon-element {
+  font-size: 25px;
+}
+.activity-bar-wrap .icon-element:hover {
+  opacity: 0.7;
 }/*# sourceMappingURL=ActivityBar.css.map */

@@ -1,0 +1,7 @@
+@import "../../variables";
+@import "../../mixin";
+
+.footer-wrap {
+  @include drawBorder($top: "true", $bcolor: $borderDarkMode);
+  padding: 8px 20px;
+}

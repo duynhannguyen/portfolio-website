@@ -1,3 +1,7 @@
+@import "../../variables";
+@import "../../mixin";
+
 .folder-structure-wrap {
   width: 70%;
+  @include drawBorder($right: "true", $bcolor: $borderDarkMode);
 }

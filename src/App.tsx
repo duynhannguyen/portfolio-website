@@ -1,15 +1,17 @@
-import './App.css';
-import Footer from './components/footer/Footer';
-import Header from './components/header/Header';
-import MainSection from './components/mainSection/MainSection';
+import "./App.css";
+import Footer from "./components/footer/Footer";
+import Header from "./components/header/Header";
+import MainSection from "./components/mainSection/MainSection";
 
 function App() {
   return (
-    <>
+    <div className="app-wrap">
       <Header />
-      <MainSection />
+      <div className="body-section">
+        <MainSection />
+      </div>
       <Footer />
-    </>
+    </div>
   );
 }
 
