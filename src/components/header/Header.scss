@@ -1,9 +1,9 @@
 @import "../../variables";
-
+@import "../../mixin";
 .header-wrap {
   padding: 8px 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 2px solid $borderDarkMode;
+  @include drawBorder($bottom: "true", $bcolor: $borderDarkMode);
 }

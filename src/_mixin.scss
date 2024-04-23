@@ -1,0 +1,22 @@
+@mixin drawBorder(
+  $top: "",
+  $left: "",
+  $right: "",
+  $bottom: "",
+  $bcolor: red,
+  $brwidth: 2px,
+  $style: solid
+) {
+  @if $top == "true" {
+    border-top: $brwidth $style $bcolor;
+  }
+  @if $left == "true" {
+    border-left: $brwidth $style $bcolor;
+  }
+  @if $bottom == "true" {
+    border-bottom: $brwidth $style $bcolor;
+  }
+  @if $right == "true" {
+    border-right: $brwidth $style $bcolor;
+  }
+}
