@@ -3,7 +3,8 @@
 
 .activity-bar-wrap {
   padding-top: 20px;
-  width: 20%;
+  width: 100%;
+  height: inherit;
   display: flex;
   flex-direction: column;
   gap: 25px;

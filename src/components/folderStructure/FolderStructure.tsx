@@ -1,11 +1,11 @@
 import "./FolderStructure.css";
-import React from "react";
 import { DownOutlined } from "@ant-design/icons";
 import { Tree } from "antd";
 import type { TreeDataNode, TreeProps } from "antd";
+
 const treeData: TreeDataNode[] = [
   {
-    title: "parent 1",
+    title: "parent dasasasdasdsaasdasdsadasdas1",
     key: "0-0",
     children: [
       {
@@ -60,14 +60,16 @@ const FolderStructure = () => {
 
   return (
     <div className="folder-structure-wrap">
-      FolderStructure
-      <Tree
-        showLine
-        switcherIcon={<DownOutlined />}
-        defaultExpandedKeys={["0-0-0"]}
-        onSelect={onSelect}
-        treeData={treeData}
-      />
+      <div className="folder-wrap">
+        <Tree
+          className="folder-structure"
+          blockNode={true}
+          switcherIcon={<DownOutlined />}
+          defaultExpandedKeys={["0-0-0"]}
+          onSelect={onSelect}
+          treeData={treeData}
+        />
+      </div>
     </div>
   );
 };

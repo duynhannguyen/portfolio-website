@@ -2,6 +2,30 @@
 @import "../../mixin";
 
 .folder-structure-wrap {
-  width: 70%;
+  width: 20%;
+
   @include drawBorder($right: "true", $bcolor: $borderDarkMode);
+}
+
+.folder-wrap {
+  padding: 10px;
+}
+
+.folder-structure {
+  background-color: transparent;
+  color: $textDarkMode;
+  font-family: inherit;
+  font-weight: 400;
+  font-style: normal;
+
+  & .ant-tree-node-content-wrapper {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  & .ant-tree-treenode-selected .ant-tree-node-content-wrapper {
+    background-color: #61616148;
+    color: white;
+  }
 }

@@ -1,4 +1,25 @@
 .folder-structure-wrap {
-  width: 70%;
+  width: 20%;
   border-right: 2px solid #3c0753;
+}
+
+.folder-wrap {
+  padding: 10px;
+}
+
+.folder-structure {
+  background-color: transparent;
+  color: #720455;
+  font-family: inherit;
+  font-weight: 400;
+  font-style: normal;
+}
+.folder-structure .ant-tree-node-content-wrapper {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.folder-structure .ant-tree-treenode-selected .ant-tree-node-content-wrapper {
+  background-color: rgba(97, 97, 97, 0.2823529412);
+  color: white;
 }/*# sourceMappingURL=FolderStructure.css.map */

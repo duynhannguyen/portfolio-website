@@ -1,11 +1,22 @@
+import { Dispatch, SetStateAction } from "react";
 import ActivityBar from "../activityBar/ActivityBar";
-import FolderStructure from "../folderStructure/FolderStructure";
 import "./NavigateSection.css";
-const NavigateSection = () => {
+
+export type NavigateSectionProps = {
+  setShowFolderStructure: Dispatch<SetStateAction<boolean>>;
+  showFolderStructure: boolean;
+};
+
+const NavigateSection = ({
+  setShowFolderStructure,
+  showFolderStructure,
+}: NavigateSectionProps) => {
   return (
     <div className="navigate-section-wrap">
-      <ActivityBar />
-      <FolderStructure />
+      <ActivityBar
+        setShowFolderStructure={setShowFolderStructure}
+        showFolderStructure={showFolderStructure}
+      />
     </div>
   );
 };

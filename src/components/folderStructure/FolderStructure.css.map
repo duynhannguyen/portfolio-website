@@ -1,1 +1,1 @@
-{"version":3,"sources":["FolderStructure.scss","../../_mixin.scss","FolderStructure.css"],"names":[],"mappings":"AAGA;EACE,UAAA;ECeE,+BAAA;AChBJ","file":"FolderStructure.css"}
+{"version":3,"sources":["FolderStructure.scss","../../_mixin.scss","FolderStructure.css","../../_variables.scss"],"names":[],"mappings":"AAGA;EACE,UAAA;ECeE,+BAAA;AChBJ;;AFMA;EACE,aAAA;AEHF;;AFMA;EACE,6BAAA;EACA,cGba;EHcb,oBAAA;EACA,gBAAA;EACA,kBAAA;AEHF;AFKE;EACE,mBAAA;EACA,gBAAA;EACA,uBAAA;AEHJ;AFME;EACE,gDAAA;EACA,YAAA;AEJJ","file":"FolderStructure.css"}

@@ -1,5 +1,6 @@
 import { FaFileCode, FaGamepad, FaUser } from "react-icons/fa6";
 import "./ActivityBar.css";
+import { NavigateSectionProps } from "../navigateSection/NavigateSection";
 
 const iconList = [
   { icon: <FaUser title="Personal info" /> },
@@ -7,11 +8,20 @@ const iconList = [
   { icon: <FaGamepad title="Hobbies" /> },
 ];
 
-const ActivityBar = () => {
+type ActivityBarProps = NavigateSectionProps;
+
+const ActivityBar = ({
+  setShowFolderStructure,
+  showFolderStructure,
+}: ActivityBarProps) => {
   return (
     <div className="activity-bar-wrap">
       {iconList.map((item, index) => (
-        <div className="icon-element" key={index}>
+        <div
+          onClick={() => setShowFolderStructure(!showFolderStructure)}
+          className="icon-element"
+          key={index}
+        >
           {" "}
           {item.icon}{" "}
         </div>
