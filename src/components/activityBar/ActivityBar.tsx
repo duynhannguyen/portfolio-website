@@ -15,6 +15,9 @@ const ActivityBar = ({ clickToFolded, folderTitle }: ActivityBarProps) => {
     <div className="activity-bar-wrap">
       {iconList.map((item, index) => (
         <div
+          style={
+            folderTitle === item.title ? { color: '#ffffffab' } : undefined
+          }
           onClick={() => clickToFolded(item.title)}
           className="icon-element"
           key={index}
@@ -22,7 +25,7 @@ const ActivityBar = ({ clickToFolded, folderTitle }: ActivityBarProps) => {
           {' '}
           {item.icon}
           {folderTitle === item.title ? (
-            <div className="active-icon"></div>
+            <div className="active-icon "></div>
           ) : null}
         </div>
       ))}

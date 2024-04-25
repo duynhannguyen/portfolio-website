@@ -16,6 +16,9 @@
   text-align: center;
   position: relative;
 }
+.activity-bar-wrap .icon-element .icon-element-active {
+  color: rgba(255, 255, 255, 0.6705882353);
+}
 .activity-bar-wrap .icon-element .active-icon {
   position: absolute;
   height: 100%;

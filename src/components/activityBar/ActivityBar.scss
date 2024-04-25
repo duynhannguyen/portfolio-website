@@ -17,6 +17,9 @@
     align-content: center;
     text-align: center;
     position: relative;
+    .icon-element-active {
+      color: #ffffffab;
+    }
     .active-icon {
       position: absolute;
       height: 100%;
