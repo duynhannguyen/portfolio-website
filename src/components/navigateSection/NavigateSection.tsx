@@ -1,22 +1,18 @@
-import { Dispatch, SetStateAction } from "react";
-import ActivityBar from "../activityBar/ActivityBar";
-import "./NavigateSection.css";
+import ActivityBar from '../activityBar/ActivityBar';
+import './NavigateSection.css';
 
 export type NavigateSectionProps = {
-  setShowFolderStructure: Dispatch<SetStateAction<boolean>>;
-  showFolderStructure: boolean;
+  folderTitle: string;
+  clickToFolded: (title: string) => void;
 };
 
 const NavigateSection = ({
-  setShowFolderStructure,
-  showFolderStructure,
+  clickToFolded,
+  folderTitle,
 }: NavigateSectionProps) => {
   return (
     <div className="navigate-section-wrap">
-      <ActivityBar
-        setShowFolderStructure={setShowFolderStructure}
-        showFolderStructure={showFolderStructure}
-      />
+      <ActivityBar clickToFolded={clickToFolded} folderTitle={folderTitle} />
     </div>
   );
 };
