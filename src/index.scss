@@ -6,6 +6,10 @@
   box-sizing: border-box;
 }
 
+html {
+  font-size: 62.5%;
+}
+
 body {
   background-color: $bgDarkMode;
   @include drawBorder(
@@ -15,7 +19,7 @@ body {
     $bottom: "true",
     $bcolor: $borderDarkMode
   );
-
+  font-size: 1.6rem;
   color: $textDarkMode;
   font-family: "Fira Code", monospace;
   font-optical-sizing: auto;

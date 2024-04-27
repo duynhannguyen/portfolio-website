@@ -1,15 +1,15 @@
-@import '../../variables';
-@import '../../mixin';
+@import "../../variables";
+@import "../../mixin";
 
 .folder-structure-wrap {
   width: 20%;
-
-  @include drawBorder($right: 'true', $bcolor: $borderDarkMode);
+  min-width: 20%;
+  @include drawBorder($right: "true", $bcolor: $borderDarkMode);
 }
 .title {
   text-align: center;
   padding: 4px 0;
-  @include drawBorder($bottom: 'true', $bcolor: $borderDarkMode);
+  @include drawBorder($bottom: "true", $bcolor: $borderDarkMode);
 }
 .folder-wrap {
   padding: 10px;

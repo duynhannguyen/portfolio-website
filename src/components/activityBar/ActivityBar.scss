@@ -1,17 +1,16 @@
-@import '../../mixin';
-@import '../../variables';
+@import "../../mixin";
+@import "../../variables";
 
 .activity-bar-wrap {
-  padding-top: 20px;
   width: 100%;
   height: inherit;
   display: flex;
   flex-direction: column;
   gap: 10px;
   align-items: center;
-  @include drawBorder($right: 'true', $bcolor: $borderDarkMode);
+  @include drawBorder($right: "true", $bcolor: $borderDarkMode);
   .icon-element {
-    font-size: 25px;
+    font-size: 2.5rem;
     width: 100%;
     height: 50px;
     align-content: center;

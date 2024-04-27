@@ -1,3 +1,24 @@
+@import "../../variables";
+
 .content-section-wrap {
   width: 100%;
+  padding: 40px;
+  color: $commentText;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 2rem;
+  .introdution {
+    width: 50%;
+    font-size: 2.2rem;
+  }
+  .my-life-obj {
+    width: 50%;
+    & > img {
+      width: 55rem;
+      height: 55rem;
+      object-fit: contain;
+    }
+  }
 }

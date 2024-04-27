@@ -1,5 +1,4 @@
 .activity-bar-wrap {
-  padding-top: 20px;
   width: 100%;
   height: inherit;
   display: flex;
@@ -9,7 +8,7 @@
   border-right: 2px solid #3c0753;
 }
 .activity-bar-wrap .icon-element {
-  font-size: 25px;
+  font-size: 2.5rem;
   width: 100%;
   height: 50px;
   align-content: center;
