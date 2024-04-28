@@ -1,9 +1,10 @@
-@import "../../variables";
-@import "../../mixin";
+@import '../../variables';
+@import '../../mixin';
 .header-wrap {
   padding: 8px 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  @include drawBorder($bottom: "true", $bcolor: $borderDarkMode);
+  color: $hightLightDarkMode;
+  @include drawBorder($bottom: 'true', $bcolor: $borderDarkMode);
 }

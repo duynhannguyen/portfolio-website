@@ -1,22 +1,9 @@
 .content-section-wrap {
   width: 100%;
-  padding: 40px;
+  padding: 4rem;
   color: #9da1a1;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 2rem;
-}
-.content-section-wrap .introdution {
-  width: 50%;
-  font-size: 2.2rem;
-}
-.content-section-wrap .my-life-obj {
-  width: 50%;
-}
-.content-section-wrap .my-life-obj > img {
-  width: 55rem;
-  height: 55rem;
-  -o-object-fit: contain;
-     object-fit: contain;
 }/*# sourceMappingURL=ContentSection.css.map */

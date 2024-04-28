@@ -1,0 +1,17 @@
+.introdution {
+  width: 50%;
+  font-size: 2.2rem;
+  text-align: left;
+}
+
+.my-life-obj {
+  width: 50%;
+  align-self: self-start;
+  text-align: center;
+}
+.my-life-obj > img {
+  max-height: 55.5rem;
+  border-radius: 0.4rem;
+  -o-object-fit: fill;
+     object-fit: fill;
+}/*# sourceMappingURL=AboutMe.css.map */

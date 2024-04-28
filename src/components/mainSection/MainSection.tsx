@@ -1,14 +1,14 @@
-import { useState } from "react";
-import ContentSection from "../contentSection/ContentSection";
-import NavigateSection from "../navigateSection/NavigateSection";
-import "./MainSection.css";
-import FolderStructure from "../folderStructure/FolderStructure";
+import { useState } from 'react';
+import ContentSection from '../contentSection/ContentSection';
+import NavigateSection from '../navigateSection/NavigateSection';
+import './MainSection.css';
+import FolderStructure from '../folderStructure/FolderStructure';
 
 const MainSection = () => {
-  const [folderTitle, setFolderTitle] = useState("Personal info");
+  const [folderTitle, setFolderTitle] = useState('');
   const clickToFolded = (title: string) => {
     if (folderTitle === title) {
-      return setFolderTitle("");
+      return setFolderTitle('');
     }
     setFolderTitle(title);
   };

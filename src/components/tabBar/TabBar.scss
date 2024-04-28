@@ -1,0 +1,27 @@
+@import '../../variables';
+@import '../../mixin';
+.tab-bar-wrap {
+  @include drawBorder($bottom: 'true', $bcolor: $borderDarkMode);
+  display: flex;
+  .tab-container {
+    @include drawBorder($right: 'true', $bcolor: $borderDarkMode);
+    padding: 0.4rem 1rem 0.4rem 0.4rem;
+    min-width: 10rem;
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+    cursor: pointer;
+    .close-mark {
+      visibility: hidden;
+      min-width: 2rem;
+      text-align: center;
+      &:hover {
+        border-radius: 0.4rem;
+        background-color: rgba(107, 103, 103, 0.24);
+      }
+    }
+    &:hover > .close-mark {
+      visibility: visible;
+    }
+  }
+}
