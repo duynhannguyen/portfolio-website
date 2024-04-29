@@ -9,7 +9,7 @@ type FileListType = {
   children: ChildrenType[];
 };
 
-type ChildrenType = {
+export type ChildrenType = {
   title: string;
   key: Key;
   component?: ReactNode;

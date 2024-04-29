@@ -1,9 +1,7 @@
 .content-section-wrap {
+  min-width: 100%;
+}
+
+.tab-bar-section {
   width: 100%;
-  padding: 4rem;
-  color: #9da1a1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 2rem;
 }/*# sourceMappingURL=ContentSection.css.map */

@@ -1,13 +1,15 @@
-import { useState } from "react";
+import { Key, useState } from "react";
 import ContentSection from "../contentSection/ContentSection";
 import NavigateSection from "../navigateSection/NavigateSection";
 import "./MainSection.css";
 import FolderStructure from "../folderStructure/FolderStructure";
+import { ChildrenType } from "../../constants/constants";
 
 const MainSection = () => {
   const [folderTitle, setFolderTitle] = useState("");
-  const [showFile, setShowFile] = useState("");
-  const [showTabBar, setShowTabBar] = useState(false);
+  const [showFile, setShowFile] = useState<Key>("");
+  const [showTabBar, setShowTabBar] = useState<ChildrenType[]>([]);
+  // console.log("showTabBar", showTabBar);
   const clickToFolded = (title: string) => {
     if (folderTitle === title) {
       return setFolderTitle("");
@@ -21,9 +23,18 @@ const MainSection = () => {
         clickToFolded={clickToFolded}
         folderTitle={folderTitle}
       />
-      {folderTitle && <FolderStructure folderTitle={folderTitle} />}
+
+      {folderTitle && (
+        <FolderStructure
+          showTabBar={showTabBar}
+          setShowTabBar={setShowTabBar}
+          folderTitle={folderTitle}
+          setShowFile={setShowFile}
+        />
+      )}
+
       <div className="content-container">
-        <ContentSection />
+        <ContentSection showFile={showFile} showTabBar={showTabBar} />
       </div>
     </div>
   );

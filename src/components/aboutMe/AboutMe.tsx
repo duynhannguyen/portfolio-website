@@ -1,8 +1,8 @@
-import './AboutMe.css';
+import "./AboutMe.css";
 
 const AboutMe = () => {
   return (
-    <>
+    <div className="about-me-wrap">
       <div className="introdution">
         /* In terms of skills, I currently work with JavaScript, React, and
         related tools for front-end development. I'm also actively learning to
@@ -17,7 +17,7 @@ const AboutMe = () => {
       <div className="my-life-obj">
         <img src="/myLife_dark.png" alt="myLife" />
       </div>
-    </>
+    </div>
   );
 };
 

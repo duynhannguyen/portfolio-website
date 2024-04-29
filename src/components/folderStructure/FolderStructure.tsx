@@ -2,16 +2,27 @@ import "./FolderStructure.css";
 import { DownOutlined } from "@ant-design/icons";
 import { Tree } from "antd";
 import type { TreeDataNode, TreeProps } from "antd";
-import { Key, useState } from "react";
-import { fileList } from "../../constants/constants";
+import { Dispatch, Key, SetStateAction, useState } from "react";
+import { ChildrenType, fileList } from "../../constants/constants";
 
 type FolderStructureProps = {
   folderTitle: string;
+  setShowTabBar: Dispatch<SetStateAction<ChildrenType[]>>;
+  showTabBar: ChildrenType[];
+  setShowFile: Dispatch<SetStateAction<Key>>;
 };
 
-const FolderStructure = ({ folderTitle }: FolderStructureProps) => {
+const FolderStructure = ({
+  folderTitle,
+  setShowTabBar,
+  showTabBar,
+  setShowFile,
+}: FolderStructureProps) => {
   const [expandTree, setExpandTree] = useState<Key[]>([]);
-
+  const fileListChildren = fileList.map((item) => {
+    return item.children;
+  });
+  // console.log("fileListChildren", fileListChildren);
   const updatedData: TreeDataNode[] = fileList.map((item) => {
     const { children } = item;
     const updateChildren = children.map((child) => {
@@ -26,12 +37,21 @@ const FolderStructure = ({ folderTitle }: FolderStructureProps) => {
   const onSelect: TreeProps["onSelect"] = (selectedKeys, info) => {
     console.log("selected", info);
     if (expandTree.includes(info?.node?.key)) {
-      return setExpandTree((prev) =>
-        prev.filter((key) => key !== info?.node?.key)
-      );
+      setExpandTree((prev) => prev.filter((key) => key !== info?.node?.key));
+    } else {
+      setExpandTree((prev) => [...prev, info?.node?.key]);
     }
-
-    setExpandTree((prev) => [...prev, info?.node?.key]);
+    if (info?.node?.key) {
+      setShowFile(info?.node?.key);
+      if (showTabBar.some((item) => item.key === info?.node?.key)) {
+        return;
+      }
+      const listKey = fileListChildren.flat();
+      const listKeyResult = listKey.filter((item) => {
+        return item.key === info?.node?.key;
+      });
+      return setShowTabBar((prev) => [...prev, ...listKeyResult]);
+    }
   };
 
   return (

@@ -1,7 +1,14 @@
-import AboutMe from '../aboutMe/AboutMe';
-import Tabbar from '../tabBar/TabBar';
-import './ContentSection.css';
-const ContentSection = () => {
+import { Fragment, Key } from "react";
+import { ChildrenType } from "../../constants/constants";
+import TabBar from "../tabBar/TabBar";
+import "./ContentSection.css";
+
+type ContentSectionProps = {
+  showTabBar: ChildrenType[];
+  showFile: Key;
+};
+
+const ContentSection = ({ showTabBar, showFile }: ContentSectionProps) => {
   // const myLife = {
   //   name: "Nguyen Duy Nhan",
   //   yearOfBirth: 1999,
@@ -25,12 +32,17 @@ const ContentSection = () => {
   // myLife.work.getBetter(STEP)
   return (
     <>
-      <div>
-        {' '}
-        <Tabbar />{' '}
+      <div className="tab-bar-section">
+        {" "}
+        <TabBar tabChildren={showTabBar} />{" "}
       </div>
       <div className="content-section-wrap">
-        <AboutMe />
+        {/* <AboutMe /> */}
+        {showTabBar.map((file, index) => {
+          if (file.key === showFile) {
+            return <Fragment key={index}> {file.component} </Fragment>;
+          }
+        })}
       </div>
     </>
   );

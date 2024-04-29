@@ -1,10 +1,11 @@
-@import '../../variables';
-@import '../../mixin';
+@import "../../variables";
+@import "../../mixin";
 .tab-bar-wrap {
-  @include drawBorder($bottom: 'true', $bcolor: $borderDarkMode);
+  @include drawBorder($bottom: "true", $bcolor: $borderDarkMode);
   display: flex;
+
   .tab-container {
-    @include drawBorder($right: 'true', $bcolor: $borderDarkMode);
+    @include drawBorder($right: "true", $bcolor: $borderDarkMode);
     padding: 0.4rem 1rem 0.4rem 0.4rem;
     min-width: 10rem;
     display: flex;

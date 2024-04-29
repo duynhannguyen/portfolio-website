@@ -1,4 +1,7 @@
 .main-section-wrap {
   display: flex;
   height: 100%;
+}
+.main-section-wrap .content-container {
+  flex-grow: 1;
 }/*# sourceMappingURL=MainSection.css.map */
