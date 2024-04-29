@@ -1,93 +1,9 @@
-import './FolderStructure.css';
-import { DownOutlined } from '@ant-design/icons';
-import { Tree } from 'antd';
-import type { TreeDataNode, TreeProps } from 'antd';
-import { Key, useState } from 'react';
-
-const treeData: TreeDataNode[] = [
-  {
-    title: 'Bio',
-    key: '0-0',
-    children: [
-      {
-        title: 'About me',
-        key: '0-0-0',
-      },
-      {
-        title: 'parent 1-1',
-        key: '0-0-1',
-        children: [
-          {
-            title: 'leaf',
-            key: '0-0-1-0',
-          },
-        ],
-      },
-      {
-        title: 'parent 1-2',
-        key: '0-0-2',
-        children: [
-          {
-            title: 'leaf',
-            key: '0-0-2-0',
-          },
-          {
-            title: 'leaf',
-            key: '0-0-2-1',
-          },
-        ],
-      },
-    ],
-  },
-  {
-    title: 'Interests',
-    key: '1-0',
-    children: [
-      {
-        title: 'parent 1-0',
-        key: '1-0-0',
-        children: [
-          {
-            title: 'leaf',
-            key: '1-0-0-1',
-          },
-          {
-            title: 'leaf',
-            key: '1-0-0-2',
-          },
-          {
-            title: 'leaf',
-            key: '1-0-0-3',
-          },
-        ],
-      },
-    ],
-  },
-  {
-    title: 'Education',
-    key: '2-0',
-    children: [
-      {
-        title: 'parent 1-0',
-        key: '2-0-0',
-        children: [
-          {
-            title: 'leaf',
-            key: '2-0-0-1',
-          },
-          {
-            title: 'leaf',
-            key: '2-0-0-2',
-          },
-          {
-            title: 'leaf',
-            key: '2-0-0-3',
-          },
-        ],
-      },
-    ],
-  },
-];
+import "./FolderStructure.css";
+import { DownOutlined } from "@ant-design/icons";
+import { Tree } from "antd";
+import type { TreeDataNode, TreeProps } from "antd";
+import { Key, useState } from "react";
+import { fileList } from "../../constants/constants";
 
 type FolderStructureProps = {
   folderTitle: string;
@@ -96,8 +12,19 @@ type FolderStructureProps = {
 const FolderStructure = ({ folderTitle }: FolderStructureProps) => {
   const [expandTree, setExpandTree] = useState<Key[]>([]);
 
-  const onSelect: TreeProps['onSelect'] = (selectedKeys, info) => {
-    console.log('selected', info);
+  const updatedData: TreeDataNode[] = fileList.map((item) => {
+    const { children } = item;
+    const updateChildren = children.map((child) => {
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      const { component, ...rest } = child;
+
+      return rest;
+    });
+    return { ...item, children: updateChildren };
+  });
+
+  const onSelect: TreeProps["onSelect"] = (selectedKeys, info) => {
+    console.log("selected", info);
     if (expandTree.includes(info?.node?.key)) {
       return setExpandTree((prev) =>
         prev.filter((key) => key !== info?.node?.key)
@@ -116,7 +43,7 @@ const FolderStructure = ({ folderTitle }: FolderStructureProps) => {
           blockNode={true}
           switcherIcon={<DownOutlined />}
           onSelect={onSelect}
-          treeData={treeData}
+          treeData={updatedData}
           expandedKeys={expandTree}
         />
       </div>
