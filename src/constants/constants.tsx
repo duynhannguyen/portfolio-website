@@ -12,6 +12,7 @@ type FileListType = {
 export type ChildrenType = {
   title: string;
   key: Key;
+  isActive: boolean;
   component?: ReactNode;
 };
 
@@ -24,16 +25,19 @@ export const fileList: FileListType[] = [
         title: "About me",
         key: "0-0-0",
         component: <AboutMe />,
+        isActive: false,
       },
       {
         title: "My resume",
         key: "0-0-1",
         component: <MyResume />,
+        isActive: false,
       },
       {
         title: "Education",
         key: "0-0-2",
         component: <Education />,
+        isActive: false,
       },
     ],
   },
@@ -44,6 +48,7 @@ export const fileList: FileListType[] = [
       {
         title: "parent 1-0",
         key: "1-0-0",
+        isActive: false,
       },
     ],
   },
@@ -54,6 +59,7 @@ export const fileList: FileListType[] = [
       {
         title: "parent 1-0",
         key: "2-0-0",
+        isActive: false,
       },
     ],
   },

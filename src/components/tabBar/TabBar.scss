@@ -3,22 +3,27 @@
 .tab-bar-wrap {
   @include drawBorder($bottom: "true", $bcolor: $borderDarkMode);
   display: flex;
-
+  .active-tab-container {
+    color: white;
+    background-color: $hightLightDarkMode;
+  }
   .tab-container {
     @include drawBorder($right: "true", $bcolor: $borderDarkMode);
-    padding: 0.4rem 1rem 0.4rem 0.4rem;
+    padding: 0.4rem 1rem 0.4rem 0.6rem;
     min-width: 10rem;
     display: flex;
     gap: 1rem;
     justify-content: space-between;
     cursor: pointer;
+
     .close-mark {
       visibility: hidden;
       min-width: 2rem;
       text-align: center;
+      color: white;
       &:hover {
         border-radius: 0.4rem;
-        background-color: rgba(107, 103, 103, 0.24);
+        background-color: rgba($color: $textDarkMode, $alpha: 0.8);
       }
     }
     &:hover > .close-mark {

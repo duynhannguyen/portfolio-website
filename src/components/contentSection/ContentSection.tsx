@@ -5,10 +5,18 @@ import "./ContentSection.css";
 
 type ContentSectionProps = {
   showTabBar: ChildrenType[];
-  showFile: Key;
+  activeFileToShow: (key: Key) => void;
+  handleCloseTab: (
+    key: Key,
+    event: React.MouseEvent<HTMLButtonElement>
+  ) => void;
 };
 
-const ContentSection = ({ showTabBar, showFile }: ContentSectionProps) => {
+const ContentSection = ({
+  showTabBar,
+  handleCloseTab,
+  activeFileToShow,
+}: ContentSectionProps) => {
   // const myLife = {
   //   name: "Nguyen Duy Nhan",
   //   yearOfBirth: 1999,
@@ -34,13 +42,16 @@ const ContentSection = ({ showTabBar, showFile }: ContentSectionProps) => {
     <>
       <div className="tab-bar-section">
         {" "}
-        <TabBar tabChildren={showTabBar} />{" "}
+        <TabBar
+          tabChildren={showTabBar}
+          activeFileToShow={activeFileToShow}
+          handleCloseTab={handleCloseTab}
+        />{" "}
       </div>
       <div className="content-section-wrap">
-        {/* <AboutMe /> */}
-        {showTabBar.map((file, index) => {
-          if (file.key === showFile) {
-            return <Fragment key={index}> {file.component} </Fragment>;
+        {showTabBar.map((file) => {
+          if (file.isActive) {
+            return <Fragment key={file.key}> {file.component} </Fragment>;
           }
         })}
       </div>

@@ -9,14 +9,12 @@ type FolderStructureProps = {
   folderTitle: string;
   setShowTabBar: Dispatch<SetStateAction<ChildrenType[]>>;
   showTabBar: ChildrenType[];
-  setShowFile: Dispatch<SetStateAction<Key>>;
 };
 
 const FolderStructure = ({
   folderTitle,
   setShowTabBar,
   showTabBar,
-  setShowFile,
 }: FolderStructureProps) => {
   const [expandTree, setExpandTree] = useState<Key[]>([]);
   const fileListChildren = fileList.map((item) => {
@@ -35,20 +33,34 @@ const FolderStructure = ({
   });
 
   const onSelect: TreeProps["onSelect"] = (selectedKeys, info) => {
+    const currentKey = info?.node?.key;
     console.log("selected", info);
     if (expandTree.includes(info?.node?.key)) {
       setExpandTree((prev) => prev.filter((key) => key !== info?.node?.key));
     } else {
       setExpandTree((prev) => [...prev, info?.node?.key]);
     }
-    if (info?.node?.key) {
-      setShowFile(info?.node?.key);
-      if (showTabBar.some((item) => item.key === info?.node?.key)) {
-        return;
+
+    if (currentKey) {
+      const isFileExit = showTabBar.find((item) => item.key === currentKey);
+      if (isFileExit) {
+        const activeCurrentFile = showTabBar.map((item) => {
+          if (item.key !== currentKey) {
+            item.isActive = false;
+          } else {
+            item.isActive = true;
+          }
+          return item;
+        });
+        return setShowTabBar(activeCurrentFile);
       }
+
       const listKey = fileListChildren.flat();
       const listKeyResult = listKey.filter((item) => {
-        return item.key === info?.node?.key;
+        item.isActive = false;
+        if (item.key === currentKey) {
+          return (item.isActive = true);
+        }
       });
       return setShowTabBar((prev) => [...prev, ...listKeyResult]);
     }
