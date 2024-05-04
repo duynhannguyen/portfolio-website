@@ -8,6 +8,7 @@ import { ChildrenType } from "../../constants/constants";
 const MainSection = () => {
   const [folderTitle, setFolderTitle] = useState("");
   const [showTabBar, setShowTabBar] = useState<ChildrenType[]>([]);
+  const [selectedKey, setSelectdKey] = useState<Key[]>([]);
   console.log("showTabBar", showTabBar);
   const clickToFolded = (title: string) => {
     if (folderTitle === title) {
@@ -25,17 +26,18 @@ const MainSection = () => {
       }
       return tab;
     });
-    console.log("showOnlyActiveFile", showOnlyActiveFile);
+    // console.log("showOnlyActiveFile", showOnlyActiveFile);
     setShowTabBar(showOnlyActiveFile);
+    setSelectdKey([key]);
   };
   const handleCloseTab = (
     key: Key,
     event: React.MouseEvent<HTMLButtonElement>
   ) => {
-    console.log("close");
     event.stopPropagation();
     const currentFileIndex = showTabBar.findIndex((tab) => tab.key === key);
-    if (showTabBar[currentFileIndex].isActive) {
+    const lastTabIndex = showTabBar.length - 1 === currentFileIndex;
+    if (showTabBar[currentFileIndex].isActive && lastTabIndex) {
       const showLastFile = showTabBar.map((tabs, index) => {
         tabs.isActive = false;
         if (index === showTabBar.length - 2) {
@@ -43,10 +45,30 @@ const MainSection = () => {
         }
         return tabs;
       });
-      console.log("showLastFile", showLastFile);
+
       const removeCurrentFile = showLastFile.filter((tab) => tab.key !== key);
       setShowTabBar(removeCurrentFile);
-    } else {
+      if (showLastFile.length === 1) {
+        return setSelectdKey([]);
+      }
+      setSelectdKey([showLastFile[showLastFile.length - 2].key]);
+    }
+    if (showTabBar[currentFileIndex].isActive && !lastTabIndex) {
+      const removeCurrentFile = showTabBar.filter((tab) => tab.key !== key);
+      const showLastFile = removeCurrentFile.map((tabs, index) => {
+        tabs.isActive = false;
+        if (index === removeCurrentFile.length - 1) {
+          return { ...tabs, isActive: true };
+        }
+        return tabs;
+      });
+      setShowTabBar(showLastFile);
+      if (showLastFile.length === 1) {
+        return setSelectdKey([]);
+      }
+      setSelectdKey([showLastFile[showLastFile.length - 1].key]);
+    }
+    if (!showTabBar[currentFileIndex].isActive) {
       const closeTab = showTabBar.filter((tab) => tab.key !== key);
       setShowTabBar(closeTab);
     }
@@ -64,6 +86,8 @@ const MainSection = () => {
           showTabBar={showTabBar}
           setShowTabBar={setShowTabBar}
           folderTitle={folderTitle}
+          setSelectdKey={setSelectdKey}
+          selectedKey={selectedKey}
         />
       )}
 
@@ -72,6 +96,8 @@ const MainSection = () => {
           handleCloseTab={handleCloseTab}
           activeFileToShow={activeFileToShow}
           showTabBar={showTabBar}
+          setSelectdKey={setSelectdKey}
+          selectedKey={selectedKey}
         />
       </div>
     </div>

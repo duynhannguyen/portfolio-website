@@ -1,4 +1,4 @@
-import { Key } from "react";
+import { Dispatch, Key, SetStateAction } from "react";
 import { ChildrenType } from "../../constants/constants";
 import "./TabBar.css";
 
@@ -9,13 +9,16 @@ export type TabBarProps = {
     event: React.MouseEvent<HTMLButtonElement>
   ) => void;
   activeFileToShow: (key: Key) => void;
+  selectedKey: Key[];
+  setSelectdKey: Dispatch<SetStateAction<Key[]>>;
 };
 const TabBar = ({
   tabChildren,
   handleCloseTab,
   activeFileToShow,
+  setSelectdKey,
+  selectedKey,
 }: TabBarProps) => {
-  console.log("tabChildren", tabChildren);
   return (
     <div className="tab-bar-wrap">
       {tabChildren &&

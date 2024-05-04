@@ -1,4 +1,4 @@
-import { Fragment, Key } from "react";
+import { Dispatch, Fragment, Key, SetStateAction } from "react";
 import { ChildrenType } from "../../constants/constants";
 import TabBar from "../tabBar/TabBar";
 import "./ContentSection.css";
@@ -10,34 +10,17 @@ type ContentSectionProps = {
     key: Key,
     event: React.MouseEvent<HTMLButtonElement>
   ) => void;
+  selectedKey: Key[];
+  setSelectdKey: Dispatch<SetStateAction<Key[]>>;
 };
 
 const ContentSection = ({
   showTabBar,
   handleCloseTab,
   activeFileToShow,
+  setSelectdKey,
+  selectedKey,
 }: ContentSectionProps) => {
-  // const myLife = {
-  //   name: "Nguyen Duy Nhan",
-  //   yearOfBirth: 1999,
-  //   address: 'Ho Chi Minh City',
-  //   interest: ['learning','coding','reading'],
-  //   work: {
-  //     jobTitle: 'Web & SoftWare developer',
-  //     curentLevel:'INITAL_LEVEL',
-  //     getBetter: function(step){
-  //       const targetLevel = this.curentLevel + step
-  //       while(this.curentLevel < targetLevel){
-  //         this.curentLevel ++;
-  //         toWork()
-  //       }
-  //       toWork()
-  //       this.getBetter(step)
-  //     }
-  //   }
-
-  // }
-  // myLife.work.getBetter(STEP)
   return (
     <>
       <div className="tab-bar-section">
@@ -46,6 +29,8 @@ const ContentSection = ({
           tabChildren={showTabBar}
           activeFileToShow={activeFileToShow}
           handleCloseTab={handleCloseTab}
+          setSelectdKey={setSelectdKey}
+          selectedKey={selectedKey}
         />{" "}
       </div>
       <div className="content-section-wrap">
