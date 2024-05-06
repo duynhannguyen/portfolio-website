@@ -1,5 +1,5 @@
-import ActivityBar from '../activityBar/ActivityBar';
-import './NavigateSection.css';
+import ActivityBar from "../activityBar/ActivityBar";
+import "./NavigateSection.css";
 
 export type NavigateSectionProps = {
   folderTitle: string;
@@ -11,9 +11,9 @@ const NavigateSection = ({
   folderTitle,
 }: NavigateSectionProps) => {
   return (
-    <div className="navigate-section-wrap">
+    <nav className="navigate-section-wrap">
       <ActivityBar clickToFolded={clickToFolded} folderTitle={folderTitle} />
-    </div>
+    </nav>
   );
 };
 

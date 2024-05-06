@@ -4,6 +4,7 @@ import NavigateSection from "../navigateSection/NavigateSection";
 import "./MainSection.css";
 import FolderStructure from "../folderStructure/FolderStructure";
 import { ChildrenType } from "../../constants/constants";
+import WelcomePage from "../welcomePage/WelcomePage";
 
 const MainSection = () => {
   const [folderTitle, setFolderTitle] = useState("");
@@ -26,7 +27,6 @@ const MainSection = () => {
       }
       return tab;
     });
-    // console.log("showOnlyActiveFile", showOnlyActiveFile);
     setShowTabBar(showOnlyActiveFile);
     setSelectdKey([key]);
   };
@@ -37,6 +37,7 @@ const MainSection = () => {
     event.stopPropagation();
     const currentFileIndex = showTabBar.findIndex((tab) => tab.key === key);
     const lastTabIndex = showTabBar.length - 1 === currentFileIndex;
+
     if (showTabBar[currentFileIndex].isActive && lastTabIndex) {
       const showLastFile = showTabBar.map((tabs, index) => {
         tabs.isActive = false;
@@ -45,13 +46,12 @@ const MainSection = () => {
         }
         return tabs;
       });
-
       const removeCurrentFile = showLastFile.filter((tab) => tab.key !== key);
       setShowTabBar(removeCurrentFile);
       if (showLastFile.length === 1) {
         return setSelectdKey([]);
       }
-      setSelectdKey([showLastFile[showLastFile.length - 2].key]);
+      return setSelectdKey([showLastFile[showLastFile.length - 2].key]);
     }
     if (showTabBar[currentFileIndex].isActive && !lastTabIndex) {
       const removeCurrentFile = showTabBar.filter((tab) => tab.key !== key);
@@ -66,11 +66,11 @@ const MainSection = () => {
       if (showLastFile.length === 1) {
         return setSelectdKey([]);
       }
-      setSelectdKey([showLastFile[showLastFile.length - 1].key]);
+      return setSelectdKey([showLastFile[showLastFile.length - 1].key]);
     }
     if (!showTabBar[currentFileIndex].isActive) {
       const closeTab = showTabBar.filter((tab) => tab.key !== key);
-      setShowTabBar(closeTab);
+      return setShowTabBar(closeTab);
     }
   };
 
@@ -90,16 +90,23 @@ const MainSection = () => {
           selectedKey={selectedKey}
         />
       )}
-
-      <div className="content-container">
-        <ContentSection
-          handleCloseTab={handleCloseTab}
-          activeFileToShow={activeFileToShow}
-          showTabBar={showTabBar}
-          setSelectdKey={setSelectdKey}
-          selectedKey={selectedKey}
-        />
-      </div>
+      {showTabBar.length === 0 && (
+        <section>
+          {" "}
+          <WelcomePage />{" "}
+        </section>
+      )}
+      {showTabBar.length > 0 && (
+        <section className="content-container">
+          <ContentSection
+            handleCloseTab={handleCloseTab}
+            activeFileToShow={activeFileToShow}
+            showTabBar={showTabBar}
+            setSelectdKey={setSelectdKey}
+            selectedKey={selectedKey}
+          />
+        </section>
+      )}
     </div>
   );
 };

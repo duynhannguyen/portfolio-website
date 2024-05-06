@@ -73,7 +73,7 @@ const FolderStructure = ({
   };
 
   return (
-    <div className="folder-structure-wrap">
+    <section className="folder-structure-wrap">
       <div className="title">{folderTitle}</div>
       <div className="folder-wrap">
         <Tree
@@ -87,7 +87,7 @@ const FolderStructure = ({
           defaultSelectedKeys={selectedKey}
         />
       </div>
-    </div>
+    </section>
   );
 };
 
