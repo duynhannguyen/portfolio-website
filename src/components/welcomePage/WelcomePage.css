@@ -1,1 +1,43 @@
-/*# sourceMappingURL=WelcomePage.css.map */
+.welcomePage-wrap {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  height: inherit;
+  padding: 3rem;
+}
+.welcomePage-wrap .welcome-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: center;
+  color: #d51799;
+}
+.welcomePage-wrap .welcome-content .greeting-title {
+  font-size: 3.5rem;
+}
+.welcomePage-wrap .welcome-content .author-name {
+  color: #fff;
+  font-size: 4.9rem;
+  font-weight: 700;
+}
+.welcomePage-wrap .welcome-content .job-name {
+  font-size: 3.7rem;
+}
+.welcomePage-wrap .welcome-content .oriented-development {
+  color: #fff;
+  font-size: 2rem;
+}
+.welcomePage-wrap .welcome-content .oriented-development .gt {
+  color: #d51799;
+}
+.welcomePage-wrap .welcome-picture {
+  text-align: center;
+}
+.welcomePage-wrap .welcome-picture > img {
+  margin: 0 auto;
+  max-height: 55.5rem;
+  border-radius: 0.4rem;
+  -o-object-fit: fill;
+     object-fit: fill;
+}/*# sourceMappingURL=WelcomePage.css.map */

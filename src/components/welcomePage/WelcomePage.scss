@@ -1,0 +1,45 @@
+@import "../../variables";
+
+.welcomePage-wrap {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  height: inherit;
+  padding: 3rem;
+  .welcome-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    justify-content: center;
+    color: $hightLightDarkMode;
+    .greeting-title {
+      font-size: 3.5rem;
+    }
+    .author-name {
+      color: #fff;
+      font-size: 4.9rem;
+      font-weight: 700;
+    }
+    .job-name {
+      font-size: 3.7rem;
+    }
+    .oriented-development {
+      color: #fff;
+      font-size: 2rem;
+      .gt {
+        color: $hightLightDarkMode;
+      }
+    }
+  }
+  .welcome-picture {
+    text-align: center;
+    > img {
+      margin: 0 auto;
+      max-height: 55.5rem;
+
+      border-radius: 0.4rem;
+      object-fit: fill;
+    }
+  }
+}

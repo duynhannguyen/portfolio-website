@@ -4,4 +4,8 @@
 }
 .main-section-wrap .content-container {
   flex-grow: 1;
+}
+.main-section-wrap .welcome-container {
+  height: inherit;
+  flex-grow: 1;
 }/*# sourceMappingURL=MainSection.css.map */

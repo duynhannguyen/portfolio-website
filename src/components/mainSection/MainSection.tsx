@@ -91,7 +91,7 @@ const MainSection = () => {
         />
       )}
       {showTabBar.length === 0 && (
-        <section>
+        <section className="welcome-container">
           {" "}
           <WelcomePage />{" "}
         </section>
