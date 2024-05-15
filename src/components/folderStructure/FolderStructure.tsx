@@ -2,8 +2,10 @@ import "./FolderStructure.css";
 import { DownOutlined } from "@ant-design/icons";
 import { Tree } from "antd";
 import type { TreeDataNode, TreeProps } from "antd";
-import { Dispatch, Key, SetStateAction, useState } from "react";
+import { Dispatch, Key, ReactNode, SetStateAction, useState } from "react";
 import { ChildrenType, fileList } from "../../constants/constants";
+import ProjectFillter from "../projectFillter/ProjectFillter";
+import Project from "../project/Project";
 
 type FolderStructureProps = {
   folderTitle: string;
@@ -24,7 +26,6 @@ const FolderStructure = ({
   const fileListChildren = fileList.map((item) => {
     return item.children;
   });
-  // console.log("fileListChildren", fileListChildren);
   const updatedData: TreeDataNode[] = fileList.map((item) => {
     const { children } = item;
     const updateChildren = children.map((child) => {
@@ -72,21 +73,71 @@ const FolderStructure = ({
     }
   };
 
+  // const addProjectPage = useCallback(
+  //   (title: string) => {
+  //     const projectsTab = {
+  //       title: title,
+  //       key: "projects",
+  //       component: <Project />,
+  //       isActive: true,
+  //     };
+  //     const newTabBar = showTabBar.map((tab) => {
+  //       tab.isActive = false;
+  //       return tab;
+  //     });
+  //     const addNewTabBar = [...newTabBar, projectsTab];
+  //     console.log("addNewTabBar", addNewTabBar);
+
+  //     return setShowTabBar(addNewTabBar);
+  //   },
+  //   [setShowTabBar, showTabBar]
+  // );
+
+  const showFolderByTitle = (title: string) => {
+    let tree: ReactNode = null;
+    switch (title) {
+      case "Projects":
+        tree = <ProjectFillter />;
+
+        break;
+
+      default:
+        tree = (
+          <Tree
+            className="folder-structure"
+            blockNode={true}
+            switcherIcon={<DownOutlined />}
+            onSelect={onSelect}
+            treeData={updatedData}
+            expandedKeys={expandTree}
+            selectedKeys={selectedKey}
+            defaultSelectedKeys={selectedKey}
+          />
+        );
+        break;
+    }
+    return tree;
+  };
+  if (folderTitle === "Projects") {
+    const projectsTab = {
+      title: folderTitle,
+      key: "projects",
+      component: <Project />,
+      isActive: true,
+    };
+    const newTabBar = showTabBar.map((tab) => {
+      tab.isActive = false;
+      return tab;
+    });
+    const addNewTabBar = [...newTabBar, projectsTab];
+    console.log("addNewTabBar", addNewTabBar);
+
+    // setShowTabBar(addNewTabBar);
+  }
   return (
     <section className="folder-structure-wrap">
       <div className="title">{folderTitle}</div>
-      <div className="folder-wrap">
-        <Tree
-          className="folder-structure"
-          blockNode={true}
-          switcherIcon={<DownOutlined />}
-          onSelect={onSelect}
-          treeData={updatedData}
-          expandedKeys={expandTree}
-          selectedKeys={selectedKey}
-          defaultSelectedKeys={selectedKey}
-        />
-      </div>
+      <div className="folder-wrap">{showFolderByTitle(folderTitle)}</div>
     </section>
   );
 };

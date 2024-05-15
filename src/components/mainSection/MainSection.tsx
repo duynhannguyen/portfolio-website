@@ -1,10 +1,15 @@
-import { Key, useState } from "react";
+import { Key, ReactNode, useState } from "react";
 import ContentSection from "../contentSection/ContentSection";
 import NavigateSection from "../navigateSection/NavigateSection";
 import "./MainSection.css";
 import FolderStructure from "../folderStructure/FolderStructure";
 import { ChildrenType } from "../../constants/constants";
 import WelcomePage from "../welcomePage/WelcomePage";
+
+export type FolderTitleInitState = {
+  title: string;
+  component: ReactNode;
+};
 
 const MainSection = () => {
   const [folderTitle, setFolderTitle] = useState("");
@@ -80,7 +85,6 @@ const MainSection = () => {
         clickToFolded={clickToFolded}
         folderTitle={folderTitle}
       />
-
       {folderTitle && (
         <FolderStructure
           showTabBar={showTabBar}
@@ -90,6 +94,7 @@ const MainSection = () => {
           selectedKey={selectedKey}
         />
       )}
+
       {showTabBar.length === 0 && (
         <section className="welcome-container">
           {" "}
@@ -104,6 +109,7 @@ const MainSection = () => {
             showTabBar={showTabBar}
             setSelectdKey={setSelectdKey}
             selectedKey={selectedKey}
+            folderTitle={folderTitle}
           />
         </section>
       )}

@@ -2,6 +2,7 @@ import { Key, ReactNode } from "react";
 import AboutMe from "../components/aboutMe/AboutMe";
 import Education from "../components/education/Education";
 import MyResume from "../components/myResume/MyResume";
+import { FaFileCode, FaGamepad, FaUser } from "react-icons/fa6";
 
 type FileListType = {
   title: string;
@@ -62,5 +63,20 @@ export const fileList: FileListType[] = [
         isActive: false,
       },
     ],
+  },
+];
+
+export const iconList = [
+  {
+    icon: <FaUser title="Personal info" />,
+    title: "Personal info",
+  },
+  {
+    icon: <FaFileCode title="Projects" />,
+    title: "Projects",
+  },
+  {
+    icon: <FaGamepad title="Hobbies" />,
+    title: "Hobbies",
   },
 ];

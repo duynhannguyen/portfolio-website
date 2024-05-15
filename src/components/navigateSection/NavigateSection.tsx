@@ -1,6 +1,5 @@
 import ActivityBar from "../activityBar/ActivityBar";
 import "./NavigateSection.css";
-
 export type NavigateSectionProps = {
   folderTitle: string;
   clickToFolded: (title: string) => void;

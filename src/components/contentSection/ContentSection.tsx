@@ -12,6 +12,7 @@ type ContentSectionProps = {
   ) => void;
   selectedKey: Key[];
   setSelectdKey: Dispatch<SetStateAction<Key[]>>;
+  folderTitle: string;
 };
 
 const ContentSection = ({
