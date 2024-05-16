@@ -66,17 +66,23 @@ export const fileList: FileListType[] = [
   },
 ];
 
+export const mainPage = {
+  personal: "Personal info",
+  project: "Projects",
+  hobbies: "Hobbies",
+};
+
 export const iconList = [
   {
     icon: <FaUser title="Personal info" />,
-    title: "Personal info",
+    title: mainPage.personal,
   },
   {
     icon: <FaFileCode title="Projects" />,
-    title: "Projects",
+    title: mainPage.project,
   },
   {
     icon: <FaGamepad title="Hobbies" />,
-    title: "Hobbies",
+    title: mainPage.hobbies,
   },
 ];

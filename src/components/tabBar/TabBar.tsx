@@ -16,8 +16,6 @@ const TabBar = ({
   tabChildren,
   handleCloseTab,
   activeFileToShow,
-  setSelectdKey,
-  selectedKey,
 }: TabBarProps) => {
   return (
     <div className="tab-bar-wrap">

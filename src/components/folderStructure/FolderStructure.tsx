@@ -2,8 +2,16 @@ import "./FolderStructure.css";
 import { DownOutlined } from "@ant-design/icons";
 import { Tree } from "antd";
 import type { TreeDataNode, TreeProps } from "antd";
-import { Dispatch, Key, ReactNode, SetStateAction, useState } from "react";
-import { ChildrenType, fileList } from "../../constants/constants";
+import {
+  Dispatch,
+  Key,
+  ReactNode,
+  SetStateAction,
+  useCallback,
+  useEffect,
+  useState,
+} from "react";
+import { ChildrenType, fileList, mainPage } from "../../constants/constants";
 import ProjectFillter from "../projectFillter/ProjectFillter";
 import Project from "../project/Project";
 
@@ -37,6 +45,7 @@ const FolderStructure = ({
     return { ...item, children: updateChildren };
   });
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const onSelect: TreeProps["onSelect"] = (selectedKeys, info) => {
     const currentKey = info?.node?.key;
     console.log("selectedKeys", selectedKeys);
@@ -69,33 +78,40 @@ const FolderStructure = ({
           return (item.isActive = true);
         }
       });
-      return setShowTabBar((prev) => [...prev, ...listKeyResult]);
+      const deActiveCurrentTab = showTabBar.map((tab) => {
+        tab.isActive = false;
+        return tab;
+      });
+      return setShowTabBar([...deActiveCurrentTab, ...listKeyResult]);
     }
   };
 
-  // const addProjectPage = useCallback(
-  //   (title: string) => {
-  //     const projectsTab = {
-  //       title: title,
-  //       key: "projects",
-  //       component: <Project />,
-  //       isActive: true,
-  //     };
-  //     const newTabBar = showTabBar.map((tab) => {
-  //       tab.isActive = false;
-  //       return tab;
-  //     });
-  //     const addNewTabBar = [...newTabBar, projectsTab];
-  //     console.log("addNewTabBar", addNewTabBar);
+  const addProjectPage = useCallback(
+    (title: string): ChildrenType[] => {
+      const projectsTab: ChildrenType = {
+        title: title,
+        key: mainPage.project,
+        component: <Project />,
+        isActive: true,
+      };
+      const newTabBar = showTabBar.map((tab) => {
+        tab.isActive = false;
+        return tab;
+      });
+      const addNewTabBar: ChildrenType[] = [...newTabBar, projectsTab];
 
-  //     return setShowTabBar(addNewTabBar);
-  //   },
-  //   [setShowTabBar, showTabBar]
-  // );
+      return addNewTabBar;
+    },
+    [showTabBar]
+  );
+  const isProjectPageExit = showTabBar.find(
+    (tab) => tab.title === mainPage.project
+  );
+  // console.log("addProjectPage", addProjectPage);
 
-  const showFolderByTitle = (title: string) => {
+  const showFolderByTitle = useCallback(() => {
     let tree: ReactNode = null;
-    switch (title) {
+    switch (folderTitle) {
       case "Projects":
         tree = <ProjectFillter />;
 
@@ -117,27 +133,81 @@ const FolderStructure = ({
         break;
     }
     return tree;
-  };
-  if (folderTitle === "Projects") {
-    const projectsTab = {
-      title: folderTitle,
-      key: "projects",
-      component: <Project />,
-      isActive: true,
-    };
-    const newTabBar = showTabBar.map((tab) => {
-      tab.isActive = false;
-      return tab;
-    });
-    const addNewTabBar = [...newTabBar, projectsTab];
-    console.log("addNewTabBar", addNewTabBar);
+  }, [folderTitle, expandTree, onSelect, selectedKey, updatedData]);
 
-    // setShowTabBar(addNewTabBar);
-  }
+  // const showFolderByTitle = (title: string) => {
+  //   let tree: ReactNode = null;
+  //   switch (title) {
+  //     case "Projects":
+  //       tree = <ProjectFillter />;
+
+  //       break;
+
+  //     default:
+  //       tree = (
+  //         <Tree
+  //           className="folder-structure"
+  //           blockNode={true}
+  //           switcherIcon={<DownOutlined />}
+  //           onSelect={onSelect}
+  //           treeData={updatedData}
+  //           expandedKeys={expandTree}
+  //           selectedKeys={selectedKey}
+  //           defaultSelectedKeys={selectedKey}
+  //         />
+  //       );
+  //       break;
+  //   }
+  //   return tree;
+  // };
+  useEffect(() => {
+    if (!isProjectPageExit && folderTitle === mainPage.project) {
+      showFolderByTitle();
+      const addingPage = addProjectPage(folderTitle);
+      setShowTabBar(addingPage);
+    }
+  }, [
+    folderTitle,
+    addProjectPage,
+    isProjectPageExit,
+    showFolderByTitle,
+    setShowTabBar,
+  ]);
+  // let renderComponent: ReactNode = null;
+  // if (folderTitle === "Projects") {
+  //   const projectsTab = {
+  //     title: folderTitle,
+  //     key: "projects",
+  //     component: <Project />,
+  //     isActive: true,
+  //   };
+  //   const newTabBar = showTabBar.map((tab) => {
+  //     tab.isActive = false;
+  //     return tab;
+  //   });
+  //   const addNewTabBar = [...newTabBar, projectsTab];
+  //   console.log("addNewTabBar", addNewTabBar);
+
+  //   renderComponent = <ProjectFillter />;
+  //   // setShowTabBar(addNewTabBar);
+  // } else {
+  //   renderComponent = (
+  //     <Tree
+  //       className="folder-structure"
+  //       blockNode={true}
+  //       switcherIcon={<DownOutlined />}
+  //       onSelect={onSelect}
+  //       treeData={updatedData}
+  //       expandedKeys={expandTree}
+  //       selectedKeys={selectedKey}
+  //       defaultSelectedKeys={selectedKey}
+  //     />
+  //   );
+  // }
   return (
     <section className="folder-structure-wrap">
       <div className="title">{folderTitle}</div>
-      <div className="folder-wrap">{showFolderByTitle(folderTitle)}</div>
+      <div className="folder-wrap">{showFolderByTitle()}</div>
     </section>
   );
 };

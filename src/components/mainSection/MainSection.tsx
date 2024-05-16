@@ -3,7 +3,7 @@ import ContentSection from "../contentSection/ContentSection";
 import NavigateSection from "../navigateSection/NavigateSection";
 import "./MainSection.css";
 import FolderStructure from "../folderStructure/FolderStructure";
-import { ChildrenType } from "../../constants/constants";
+import { ChildrenType, mainPage } from "../../constants/constants";
 import WelcomePage from "../welcomePage/WelcomePage";
 
 export type FolderTitleInitState = {
@@ -32,6 +32,9 @@ const MainSection = () => {
       }
       return tab;
     });
+    if (key === mainPage.project) {
+      setFolderTitle(key);
+    }
     setShowTabBar(showOnlyActiveFile);
     setSelectdKey([key]);
   };
