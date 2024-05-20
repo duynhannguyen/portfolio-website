@@ -86,3 +86,23 @@ export const iconList = [
     title: mainPage.hobbies,
   },
 ];
+
+const projectList = [
+  {
+    projectName: "Password Generator",
+    projectImg: "www.test.com",
+    projectDescr: "...",
+    projectLink: {
+      gitHub: "github.com",
+      live: "vercel.com",
+    },
+    tag: [
+      { tech: "TypeScript", icon: "TS" },
+      { tech: "HTML", icon: "HTML" },
+      {
+        tech: "CSS",
+        icon: "CSS",
+      },
+    ],
+  },
+];
