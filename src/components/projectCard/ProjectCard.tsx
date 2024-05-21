@@ -12,7 +12,12 @@ const ProjectCard = () => {
         <div className="card-image-section">
           <img
             className="card-image"
-            src="/myLife_light.png"
+            src="../weather-app-img/weather-app-front.png"
+            alt="project card"
+          />
+          <img
+            className="card-image"
+            src="../weather-app-img/weather-app-back.png"
             alt="project card"
           />
         </div>

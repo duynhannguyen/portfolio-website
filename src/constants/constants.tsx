@@ -89,12 +89,36 @@ export const iconList = [
 
 const projectList = [
   {
-    projectName: "Password Generator",
-    projectImg: "www.test.com",
-    projectDescr: "...",
+    projectName: "_Weather-app",
+    projectImg: {
+      front: "../weather-app-img/weather-app-front.png",
+      back: "../weather-app-img/weather-app-back.png",
+    },
+    projectDescr:
+      "Searching & watching weather, uv index and air pollution from cities all over the world",
     projectLink: {
-      gitHub: "github.com",
-      live: "vercel.com",
+      gitHub: "https://github.com/duynhannguyen/weather-app",
+      live: "https://weather-app-xi-sable.vercel.app/",
+    },
+    tag: [
+      { tech: "TypeScript", icon: "TS" },
+      { tech: "HTML", icon: "HTML" },
+      {
+        tech: "CSS",
+        icon: "CSS",
+      },
+    ],
+  },
+  {
+    projectName: "_Simple-calendar",
+    projectImg: {
+      front: "../weather-app-img/weather-app-front.png",
+      back: "../weather-app-img/weather-app-back.png",
+    },
+    projectDescr: "A simple calendar allow to add event",
+    projectLink: {
+      gitHub: "https://github.com/duynhannguyen/weather-app",
+      live: "https://weather-app-xi-sable.vercel.app/",
     },
     tag: [
       { tech: "TypeScript", icon: "TS" },
