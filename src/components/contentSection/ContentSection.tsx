@@ -23,7 +23,7 @@ const ContentSection = ({
   selectedKey,
 }: ContentSectionProps) => {
   return (
-    <nav>
+    <nav className="content-section-container">
       <div className="tab-bar-section">
         {" "}
         <TabBar

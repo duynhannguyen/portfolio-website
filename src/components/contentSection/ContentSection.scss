@@ -1,8 +1,15 @@
 @import "../../variables";
-
-.content-section-wrap {
-  min-width: 100%;
-}
-.tab-bar-section {
-  width: 100%;
+.content-section-container {
+  height: 100%;
+  // height: calc(100vh - 32px);
+  // overflow-y: auto;
+  .content-section-wrap {
+    height: calc(100vh - 11rem);
+    overflow-y: auto;
+    min-width: 100%;
+  }
+  .tab-bar-section {
+    height: 3.2rem;
+    width: 100%;
+  }
 }

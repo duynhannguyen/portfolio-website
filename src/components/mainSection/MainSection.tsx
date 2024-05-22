@@ -13,6 +13,7 @@ export type FolderTitleInitState = {
 
 const MainSection = () => {
   const [folderTitle, setFolderTitle] = useState("");
+  console.log("folderTitle", folderTitle);
   const [showTabBar, setShowTabBar] = useState<ChildrenType[]>([]);
   const [selectedKey, setSelectdKey] = useState<Key[]>([]);
   console.log("showTabBar", showTabBar);

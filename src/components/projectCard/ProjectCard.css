@@ -2,9 +2,8 @@
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  width: 40rem;
-  height: 40rem;
-  transition: all 0.5s ease-in-out;
+  width: 35rem;
+  height: 35rem;
 }
 .project-card-wrap .project-name-section {
   font-size: 1.8rem;
@@ -24,7 +23,7 @@
   height: 100%;
   display: flex;
   flex-direction: column;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 .project-card-wrap .card-info:hover {
   box-shadow: #d51799 1px 5px 10px 1px;
@@ -50,7 +49,7 @@
   border-top-left-radius: 0.6rem;
   border-top-right-radius: 0.6rem;
   display: block;
-  transition: all 0.2s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 .project-card-wrap .card-info .card-image-section .card-image:last-child {
   opacity: 0;

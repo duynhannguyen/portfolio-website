@@ -87,7 +87,7 @@ export const iconList = [
   },
 ];
 
-const projectList = [
+export const projectList = [
   {
     projectName: "_Weather-app",
     projectImg: {
@@ -100,33 +100,177 @@ const projectList = [
       gitHub: "https://github.com/duynhannguyen/weather-app",
       live: "https://weather-app-xi-sable.vercel.app/",
     },
-    tag: [
+    projectTag: [
       { tech: "TypeScript", icon: "TS" },
-      { tech: "HTML", icon: "HTML" },
+      { tech: "JavaScript", icon: "JavaScript" },
       {
         tech: "CSS",
         icon: "CSS",
+      },
+      {
+        tech: "SCSS",
+        icon: "SCSS",
       },
     ],
   },
   {
     projectName: "_Simple-calendar",
     projectImg: {
-      front: "../weather-app-img/weather-app-front.png",
-      back: "../weather-app-img/weather-app-back.png",
+      front: "../calendar-app-img/calendar-app-front.png",
+      back: "../calendar-app-img/calendar-app-back.png",
     },
     projectDescr: "A simple calendar allow to add event",
     projectLink: {
-      gitHub: "https://github.com/duynhannguyen/weather-app",
-      live: "https://weather-app-xi-sable.vercel.app/",
+      gitHub: "https://github.com/duynhannguyen/calendar-project",
+      live: "https://calendar-project-kappa.vercel.app/",
     },
-    tag: [
+    projectTag: [
       { tech: "TypeScript", icon: "TS" },
-      { tech: "HTML", icon: "HTML" },
       {
         tech: "CSS",
         icon: "CSS",
       },
+      { tech: "JavaScript", icon: "JavaScript" },
+    ],
+  },
+  {
+    projectName: "_Password Generator",
+    projectImg: {
+      front: "../password-generator-img/password-generator-front.png",
+      back: "../password-generator-img/password-generator-back.png",
+    },
+    projectDescr: "Generate a password based on specific options ",
+    projectLink: {
+      gitHub: "https://github.com/duynhannguyen/password-generator",
+      live: "https://password-generator-plum-beta.vercel.app/",
+    },
+    projectTag: [
+      { tech: "TypeScript", icon: "TS" },
+      {
+        tech: "CSS",
+        icon: "CSS",
+      },
+      { tech: "JavaScript", icon: "JavaScript" },
+    ],
+  },
+  {
+    projectName: "_Password Generator",
+    projectImg: {
+      front: "../password-generator-img/password-generator-front.png",
+      back: "../password-generator-img/password-generator-back.png",
+    },
+    projectDescr: "Generate a password based on specific options ",
+    projectLink: {
+      gitHub: "https://github.com/duynhannguyen/password-generator",
+      live: "https://password-generator-plum-beta.vercel.app/",
+    },
+    projectTag: [
+      { tech: "TypeScript", icon: "TS" },
+      {
+        tech: "CSS",
+        icon: "CSS",
+      },
+      { tech: "JavaScript", icon: "JavaScript" },
+    ],
+  },
+  {
+    projectName: "_Password Generator",
+    projectImg: {
+      front: "../password-generator-img/password-generator-front.png",
+      back: "../password-generator-img/password-generator-back.png",
+    },
+    projectDescr: "Generate a password based on specific options ",
+    projectLink: {
+      gitHub: "https://github.com/duynhannguyen/password-generator",
+      live: "https://password-generator-plum-beta.vercel.app/",
+    },
+    projectTag: [
+      { tech: "TypeScript", icon: "TS" },
+      {
+        tech: "CSS",
+        icon: "CSS",
+      },
+      { tech: "JavaScript", icon: "JavaScript" },
+    ],
+  },
+  {
+    projectName: "_Password Generator",
+    projectImg: {
+      front: "../password-generator-img/password-generator-front.png",
+      back: "../password-generator-img/password-generator-back.png",
+    },
+    projectDescr: "Generate a password based on specific options ",
+    projectLink: {
+      gitHub: "https://github.com/duynhannguyen/password-generator",
+      live: "https://password-generator-plum-beta.vercel.app/",
+    },
+    projectTag: [
+      { tech: "TypeScript", icon: "TS" },
+      {
+        tech: "CSS",
+        icon: "CSS",
+      },
+      { tech: "JavaScript", icon: "JavaScript" },
+    ],
+  },
+  {
+    projectName: "_Password Generator",
+    projectImg: {
+      front: "../password-generator-img/password-generator-front.png",
+      back: "../password-generator-img/password-generator-back.png",
+    },
+    projectDescr: "Generate a password based on specific options ",
+    projectLink: {
+      gitHub: "https://github.com/duynhannguyen/password-generator",
+      live: "https://password-generator-plum-beta.vercel.app/",
+    },
+    projectTag: [
+      { tech: "TypeScript", icon: "TS" },
+      {
+        tech: "CSS",
+        icon: "CSS",
+      },
+      { tech: "JavaScript", icon: "JavaScript" },
+    ],
+  },
+  {
+    projectName: "_Password Generator",
+    projectImg: {
+      front: "../password-generator-img/password-generator-front.png",
+      back: "../password-generator-img/password-generator-back.png",
+    },
+    projectDescr: "Generate a password based on specific options ",
+    projectLink: {
+      gitHub: "https://github.com/duynhannguyen/password-generator",
+      live: "https://password-generator-plum-beta.vercel.app/",
+    },
+    projectTag: [
+      { tech: "TypeScript", icon: "TS" },
+      {
+        tech: "CSS",
+        icon: "CSS",
+      },
+      { tech: "JavaScript", icon: "JavaScript" },
+    ],
+  },
+  {
+    projectName: "_Password Generator",
+    projectImg: {
+      front: "../password-generator-img/password-generator-front.png",
+      back: "../password-generator-img/password-generator-back.png",
+    },
+    projectDescr: "Generate a password based on specific options ",
+    projectLink: {
+      gitHub: "https://github.com/duynhannguyen/password-generator",
+      live: "https://password-generator-plum-beta.vercel.app/",
+    },
+    projectTag: [
+      { tech: "TypeScript", icon: "TS" },
+      {
+        tech: "CSS",
+        icon: "CSS",
+      },
+      { tech: "JavaScript", icon: "JavaScript" },
     ],
   },
 ];

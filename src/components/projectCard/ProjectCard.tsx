@@ -1,46 +1,48 @@
-import { HiCodeBracket, HiComputerDesktop } from "react-icons/hi2";
+import { projectList } from "../../constants/constants";
 import "./ProjectCard.css";
+import { FaCode, FaLaptop } from "react-icons/fa6";
 
-const ProjectCard = () => {
+type ProjectCardProps = (typeof projectList)[0];
+
+const ProjectCard = ({
+  projectName,
+  projectImg,
+  projectDescr,
+  projectLink,
+  projectTag,
+}: ProjectCardProps) => {
   return (
     <div className="project-card-wrap">
       <div className="project-name-section">
         <span className="mark"> // Project: </span>
-        <span className="project-title"> _Weather-app </span>
+        <span className="project-title"> {projectName} </span>
       </div>
       <div className="card-info">
         <div className="card-image-section">
           <img
             className="card-image"
-            src="../weather-app-img/weather-app-front.png"
+            src={projectImg.front}
             alt="project card"
           />
           <img
             className="card-image"
-            src="../weather-app-img/weather-app-back.png"
+            src={projectImg.back}
             alt="project card"
           />
         </div>
         <div className="card-description-section">
-          <p className="card-description">
-            Searching & watching weather, uv index and air pollution from cities
-            all over the world{" "}
-          </p>
+          <p className="card-description">{projectDescr}</p>
           <div className="card-button">
             <a
               className="source-code-btn"
-              href="https://github.com/duynhannguyen/weather-app"
+              href={projectLink.gitHub}
               target="_blank"
             >
-              <HiCodeBracket className="source-code-icon" />
+              <FaCode className="source-code-icon" />
               <span>Source</span>
             </a>
-            <a
-              className="live-btn"
-              href="https://weather-app-xi-sable.vercel.app/"
-              target="_blank"
-            >
-              <HiComputerDesktop className="live-icon" />
+            <a className="live-btn" href={projectLink.live} target="_blank">
+              <FaLaptop className="live-icon" />
 
               <span>Live </span>
             </a>

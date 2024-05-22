@@ -1,7 +1,12 @@
-.content-section-wrap {
+.content-section-container {
+  height: 100%;
+}
+.content-section-container .content-section-wrap {
+  height: calc(100vh - 11rem);
+  overflow-y: auto;
   min-width: 100%;
 }
-
-.tab-bar-section {
+.content-section-container .tab-bar-section {
+  height: 3.2rem;
   width: 100%;
 }/*# sourceMappingURL=ContentSection.css.map */
