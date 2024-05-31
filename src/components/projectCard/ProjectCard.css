@@ -12,13 +12,13 @@
   color: #9da1a1;
 }
 .project-card-wrap .project-name-section .project-title {
-  color: #d51799;
+  color: #03c988;
   font-weight: bold;
 }
 .project-card-wrap .card-info {
-  border: 0.2rem solid #d51799;
+  border: 0.2rem solid #03c988;
   border-radius: 0.8rem;
-  background-color: #0f0b4b;
+  background-color: #00337c;
   width: 100%;
   height: 100%;
   display: flex;
@@ -26,7 +26,7 @@
   transition: all 0.5s ease-in-out;
 }
 .project-card-wrap .card-info:hover {
-  box-shadow: #d51799 1px 5px 10px 1px;
+  box-shadow: #03c988 1px 5px 10px 1px;
 }
 .project-card-wrap .card-info:hover .card-image-section .card-image:last-child {
   opacity: 1;
@@ -37,7 +37,7 @@
 .project-card-wrap .card-info .card-image-section {
   width: 100%;
   height: 22rem;
-  border-bottom: 0.1rem solid #d51799;
+  border-bottom: 0.1rem solid #03c988;
   position: relative;
 }
 .project-card-wrap .card-info .card-image-section .card-image {
@@ -60,6 +60,7 @@
   flex-direction: column;
   justify-content: center;
   padding: 2rem;
+  color: #fff;
 }
 .project-card-wrap .card-info .card-description-section .card-description {
   margin-bottom: 10px;
@@ -70,30 +71,31 @@
   align-items: center;
   gap: 50px;
   font-size: 1.8rem;
+  color: #fff;
 }
 .project-card-wrap .card-info .card-description-section .card-button .source-code-btn {
-  background-color: rgba(146, 144, 195, 0.7137254902);
+  background-color: #03c988;
   padding: 4px 10px;
   border-radius: 5px;
+  transition: all 0.2s;
 }
 .project-card-wrap .card-info .card-description-section .card-button .source-code-btn .source-code-icon {
   margin-right: 1rem;
   vertical-align: middle;
 }
 .project-card-wrap .card-info .card-description-section .card-button .source-code-btn:hover {
-  color: #d51799;
-  background-color: #9290c3;
+  background-color: #1c82ad;
 }
 .project-card-wrap .card-info .card-description-section .card-button .live-btn {
-  background-color: rgba(146, 144, 195, 0.7137254902);
+  background-color: #03c988;
   padding: 4px 10px;
   border-radius: 5px;
+  transition: all 0.2s;
 }
 .project-card-wrap .card-info .card-description-section .card-button .live-btn .live-icon {
   margin-right: 1rem;
   vertical-align: middle;
 }
 .project-card-wrap .card-info .card-description-section .card-button .live-btn:hover {
-  color: #d51799;
-  background-color: #9290c3;
+  background-color: #1c82ad;
 }/*# sourceMappingURL=ProjectCard.css.map */

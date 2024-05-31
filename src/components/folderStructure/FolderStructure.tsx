@@ -134,32 +134,6 @@ const FolderStructure = ({
     }
     return tree;
   }, [folderTitle, expandTree, onSelect, selectedKey, updatedData]);
-
-  // const showFolderByTitle = (title: string) => {
-  //   let tree: ReactNode = null;
-  //   switch (title) {
-  //     case "Projects":
-  //       tree = <ProjectFillter />;
-
-  //       break;
-
-  //     default:
-  //       tree = (
-  //         <Tree
-  //           className="folder-structure"
-  //           blockNode={true}
-  //           switcherIcon={<DownOutlined />}
-  //           onSelect={onSelect}
-  //           treeData={updatedData}
-  //           expandedKeys={expandTree}
-  //           selectedKeys={selectedKey}
-  //           defaultSelectedKeys={selectedKey}
-  //         />
-  //       );
-  //       break;
-  //   }
-  //   return tree;
-  // };
   useEffect(() => {
     if (!isProjectPageExit && folderTitle === mainPage.project) {
       showFolderByTitle();
@@ -173,37 +147,7 @@ const FolderStructure = ({
     showFolderByTitle,
     setShowTabBar,
   ]);
-  // let renderComponent: ReactNode = null;
-  // if (folderTitle === "Projects") {
-  //   const projectsTab = {
-  //     title: folderTitle,
-  //     key: "projects",
-  //     component: <Project />,
-  //     isActive: true,
-  //   };
-  //   const newTabBar = showTabBar.map((tab) => {
-  //     tab.isActive = false;
-  //     return tab;
-  //   });
-  //   const addNewTabBar = [...newTabBar, projectsTab];
-  //   console.log("addNewTabBar", addNewTabBar);
 
-  //   renderComponent = <ProjectFillter />;
-  //   // setShowTabBar(addNewTabBar);
-  // } else {
-  //   renderComponent = (
-  //     <Tree
-  //       className="folder-structure"
-  //       blockNode={true}
-  //       switcherIcon={<DownOutlined />}
-  //       onSelect={onSelect}
-  //       treeData={updatedData}
-  //       expandedKeys={expandTree}
-  //       selectedKeys={selectedKey}
-  //       defaultSelectedKeys={selectedKey}
-  //     />
-  //   );
-  // }
   return (
     <section className="folder-structure-wrap">
       <div className="title">{folderTitle}</div>

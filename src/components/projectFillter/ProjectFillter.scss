@@ -1,0 +1,82 @@
+@import "../../variables";
+
+.fillter-option {
+  display: flex;
+  align-items: center;
+  font-size: 1.7rem;
+  transition: all 0.2s;
+  margin-bottom: 1.5rem;
+  padding: 5px;
+  // &:hover > &-text > .frameWork-icon > svg > g {
+  //   fill: $hightLightDarkMode;
+  // }
+  &:hover {
+    background-color: rgba($borderDarkMode, 0.5);
+  }
+  input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    transition: all 0.2s;
+  }
+
+  // input[type="checkbox"]:checked
+  //   + .checkbox-label
+  //   + &-text
+  //   > .frameWork-icon
+  //   > svg
+  //   > g {
+  //   fill: $hightLightDarkMode;
+  // }
+
+  // input[type="checkbox"]:checked + .checkbox-label + &-text {
+  //   color: $hightLightDarkMode;
+  // }
+
+  input[type="checkbox"]:checked + .checkbox-label::before {
+    background-color: $hightLightDarkMode;
+    content: "\2713";
+    color: #fff;
+    font-size: 1.6rem;
+    line-height: 2rem;
+    text-align: center;
+  }
+
+  .checkbox-label {
+    position: relative;
+    padding-left: 4rem;
+    cursor: pointer;
+  }
+
+  .checkbox-label::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 2.3rem;
+    height: 2.3rem;
+    border: 0.2rem solid $borderDarkMode;
+    border-radius: 0.4rem;
+  }
+
+  &-text {
+    font-weight: 500;
+    text-align: center;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+
+    .frameWork-icon {
+      vertical-align: middle;
+      margin-right: 0.2rem;
+      height: 2.3rem;
+      width: 2.3rem;
+      transition: all 0.2s;
+    }
+    .frameWork-text {
+      font-size: 2.3rem;
+      transition: all 0.2s;
+    }
+  }
+}

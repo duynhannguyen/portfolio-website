@@ -1,13 +1,13 @@
 .folder-structure-wrap {
   width: 20%;
   min-width: 20%;
-  border-right: 2px solid #3c0753;
+  border-right: 2px solid #00337c;
 }
 
 .title {
   text-align: center;
   padding: 4px 0;
-  border-bottom: 2px solid #3c0753;
+  border-bottom: 2px solid #00337c;
 }
 
 .folder-wrap {
@@ -16,7 +16,7 @@
 
 .folder-structure {
   background-color: transparent;
-  color: #720455;
+  color: #1c82ad;
   font-family: inherit;
   font-weight: 400;
   font-style: normal;

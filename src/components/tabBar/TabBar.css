@@ -1,13 +1,13 @@
 .tab-bar-wrap {
-  border-bottom: 2px solid #3c0753;
+  border-bottom: 2px solid #00337c;
   display: flex;
 }
 .tab-bar-wrap .active-tab-container {
   color: white;
-  background-color: #d51799;
+  background-color: #03c988;
 }
 .tab-bar-wrap .tab-container {
-  border-right: 2px solid #3c0753;
+  border-right: 2px solid #00337c;
   padding: 0.4rem 1rem 0.4rem 0.6rem;
   min-width: 10rem;
   display: flex;
@@ -23,7 +23,7 @@
 }
 .tab-bar-wrap .tab-container .close-mark:hover {
   border-radius: 0.4rem;
-  background-color: rgba(114, 4, 85, 0.8);
+  background-color: rgba(28, 130, 173, 0.8);
 }
 .tab-bar-wrap .tab-container:hover > .close-mark {
   visibility: visible;

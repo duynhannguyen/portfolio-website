@@ -9,11 +9,11 @@ html {
 }
 
 body {
-  background-color: #030637;
-  border-left: 2px solid #3c0753;
-  border-right: 2px solid #3c0753;
+  background-color: #100241;
+  border-left: 2px solid #00337c;
+  border-right: 2px solid #00337c;
   font-size: 1.6rem;
-  color: #720455;
+  color: #1c82ad;
   font-family: "Fira Code", monospace;
   font-optical-sizing: auto;
   font-weight: 400;
