@@ -1,10 +1,16 @@
-@import '../../variables';
-@import '../../mixin';
+@import "../../variables";
+@import "../../mixin";
 .header-wrap {
   padding: 8px 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   color: $hightLightDarkMode;
-  @include drawBorder($bottom: 'true', $bcolor: $borderDarkMode);
+  @include drawBorder($bottom: "true", $bcolor: $borderDarkMode);
+  .header-name {
+    @include slide-in($top: "true");
+  }
+  .header-contact {
+    @include slide-in($top: "true");
+  }
 }

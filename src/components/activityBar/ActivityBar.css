@@ -14,6 +14,18 @@
   align-content: center;
   text-align: center;
   position: relative;
+  transition: all 0.4s;
+  animation: slide-from-left 0.4s;
+}
+@keyframes slide-from-left {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 .activity-bar-wrap .icon-element .icon-element-active {
   color: rgba(255, 255, 255, 0.6705882353);

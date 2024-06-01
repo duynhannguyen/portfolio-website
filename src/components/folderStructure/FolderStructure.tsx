@@ -21,6 +21,8 @@ type FolderStructureProps = {
   showTabBar: ChildrenType[];
   selectedKey: Key[];
   setSelectdKey: Dispatch<SetStateAction<Key[]>>;
+  fillterOptions: string[];
+  getFillter: (option: string) => void;
 };
 
 const FolderStructure = ({
@@ -29,6 +31,8 @@ const FolderStructure = ({
   showTabBar,
   setSelectdKey,
   selectedKey,
+  getFillter,
+  fillterOptions,
 }: FolderStructureProps) => {
   const [expandTree, setExpandTree] = useState<Key[]>([]);
   const fileListChildren = fileList.map((item) => {
@@ -91,7 +95,7 @@ const FolderStructure = ({
       const projectsTab: ChildrenType = {
         title: title,
         key: mainPage.project,
-        component: <Project />,
+        component: <Project fillterOptions={fillterOptions} />,
         isActive: true,
       };
       const newTabBar = showTabBar.map((tab) => {
@@ -107,13 +111,17 @@ const FolderStructure = ({
   const isProjectPageExit = showTabBar.find(
     (tab) => tab.title === mainPage.project
   );
-  // console.log("addProjectPage", addProjectPage);
 
   const showFolderByTitle = useCallback(() => {
     let tree: ReactNode = null;
     switch (folderTitle) {
       case "Projects":
-        tree = <ProjectFillter />;
+        tree = (
+          <ProjectFillter
+            getFillter={getFillter}
+            fillterOptions={fillterOptions}
+          />
+        );
 
         break;
 

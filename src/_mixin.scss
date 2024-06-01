@@ -20,3 +20,69 @@
     border-right: $brwidth $style $bcolor;
   }
 }
+
+@mixin slide-in(
+  $top: "",
+  $left: "",
+  $right: "",
+  $bottom: "",
+  $time: 0.4s,
+  $range: -50px
+) {
+  @if $top == "true" {
+    @keyframes slide-from-top {
+      0% {
+        opacity: 0;
+        transform: translateY($range);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    transition: all 0.4s;
+    animation: slide-from-top $time;
+  }
+  @if $left == "true" {
+    @keyframes slide-from-left {
+      0% {
+        opacity: 0;
+        transform: translateX($range);
+      }
+      100% {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    transition: all 0.4s;
+    animation: slide-from-left $time;
+  }
+  @if $bottom == "true" {
+    @keyframes slide-from-bottom {
+      0% {
+        opacity: 0;
+        transform: translateY($range);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    transition: all 0.4s;
+    animation: slide-from-bottom $time;
+  }
+  @if $right == "true" {
+    @keyframes slide-from-right {
+      0% {
+        opacity: 0;
+        transform: translateX($range);
+      }
+      100% {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    transition: all 0.4s;
+    animation: slide-from-right $time;
+  }
+}

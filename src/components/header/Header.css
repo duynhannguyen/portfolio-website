@@ -5,4 +5,32 @@
   justify-content: space-between;
   color: #03c988;
   border-bottom: 2px solid #00337c;
+}
+.header-wrap .header-name {
+  transition: all 0.4s;
+  animation: slide-from-top 0.4s;
+}
+@keyframes slide-from-top {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.header-wrap .header-contact {
+  transition: all 0.4s;
+  animation: slide-from-top 0.4s;
+}
+@keyframes slide-from-top {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }/*# sourceMappingURL=Header.css.map */

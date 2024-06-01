@@ -13,9 +13,10 @@ export type FolderTitleInitState = {
 
 const MainSection = () => {
   const [folderTitle, setFolderTitle] = useState("");
-  console.log("folderTitle", folderTitle);
   const [showTabBar, setShowTabBar] = useState<ChildrenType[]>([]);
   const [selectedKey, setSelectdKey] = useState<Key[]>([]);
+  const [fillterOptions, setFillterOptions] = useState<string[]>([]);
+  console.log("fillterOptions", fillterOptions);
   console.log("showTabBar", showTabBar);
   const clickToFolded = (title: string) => {
     if (folderTitle === title) {
@@ -83,6 +84,16 @@ const MainSection = () => {
     }
   };
 
+  const getFillter = (option: string) => {
+    if (fillterOptions.includes(option)) {
+      const exitFillterOptions = fillterOptions.filter(
+        (item) => item !== option
+      );
+      return setFillterOptions(exitFillterOptions);
+    }
+    setFillterOptions((prev) => [...prev, option]);
+  };
+
   return (
     <div className="main-section-wrap">
       <NavigateSection
@@ -96,6 +107,8 @@ const MainSection = () => {
           folderTitle={folderTitle}
           setSelectdKey={setSelectdKey}
           selectedKey={selectedKey}
+          getFillter={getFillter}
+          fillterOptions={fillterOptions}
         />
       )}
 
