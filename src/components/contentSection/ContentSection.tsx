@@ -41,7 +41,7 @@ const ContentSection = ({
     duplicateTabBar[ProjectPageIndex].component = (
       <Project myProjects={myProjects} />
     );
-    console.log("duplicateTabBar", duplicateTabBar);
+    // console.log("duplicateTabBar", duplicateTabBar);
     setShowTabBar(duplicateTabBar);
   };
   // if (findPageInTabList) {
@@ -65,7 +65,6 @@ const ContentSection = ({
             return <Fragment key={file.key}> {file.component} </Fragment>;
           }
         })}
-        {/* {ProjectPage()} */}
       </div>
     </nav>
   );

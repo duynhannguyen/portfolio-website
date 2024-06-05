@@ -5,7 +5,6 @@ import "./MainSection.css";
 import FolderStructure from "../folderStructure/FolderStructure";
 import { ChildrenType, mainPage, projectList } from "../../constants/constants";
 import WelcomePage from "../welcomePage/WelcomePage";
-import Project from "../project/Project";
 
 export type FolderTitleInitState = {
   title: string;
@@ -18,7 +17,6 @@ const MainSection = () => {
   const [selectedKey, setSelectdKey] = useState<Key[]>([]);
   const [fillterOptions, setFillterOptions] = useState<string[]>([]);
   const [myProjects, setMyProjects] = useState(projectList);
-  console.log("myProjects", myProjects);
   // console.log("showTabBar", showTabBar)
   const clickToFolded = (title: string) => {
     if (folderTitle === title) {
@@ -91,32 +89,29 @@ const MainSection = () => {
       const exitFillterOptions = fillterOptions.filter(
         (item) => item !== option
       );
-      const removeFilterResult = myProjects.filter(
-        (project) => !project.projectTag.includes(option)
-      );
+      const removeFilterResult = projectList.filter((project) => {
+        return exitFillterOptions.every((item) => {
+          return project.projectTag.includes(item);
+        });
+      });
       setMyProjects(removeFilterResult);
       setFillterOptions(exitFillterOptions);
     } else {
-      updateFillterResult(option);
+      const filterArray = [...fillterOptions, option];
+      updateFillterResult(filterArray);
       setFillterOptions((prev) => [...prev, option]);
     }
   };
 
-  const updateFillterResult = (fillterResult: string) => {
-    const filtering = projectList.filter((project) =>
-      project.projectTag.includes(fillterResult)
-    );
-    console.log("filtering", filtering);
+  const updateFillterResult = (filterResult: string[]) => {
+    const filtering = projectList.filter((project) => {
+      return filterResult.every((item) => {
+        return project.projectTag.includes(item);
+      });
+    });
+
     setMyProjects(filtering);
   };
-  // const updatePropsOfProjectPage = () => {
-  //   const duplicateTabBar = [...showTabBar];
-  //   const ProjectPageIndex = duplicateTabBar.findIndex((item) => item.isActive);
-  //   duplicateTabBar[ProjectPageIndex].component = (
-  //     <Project myProjects={myProjects} />
-  //   );
-  //   console.log("duplicateTabBar", duplicateTabBar);
-  // };
 
   return (
     <div className="main-section-wrap">
