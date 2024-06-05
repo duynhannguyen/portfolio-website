@@ -100,18 +100,7 @@ export const projectList = [
       gitHub: "https://github.com/duynhannguyen/weather-app",
       live: "https://weather-app-xi-sable.vercel.app/",
     },
-    projectTag: [
-      { tech: "TypeScript", icon: "TS" },
-      { tech: "JavaScript", icon: "JavaScript" },
-      {
-        tech: "CSS",
-        icon: "CSS",
-      },
-      {
-        tech: "SCSS",
-        icon: "SCSS",
-      },
-    ],
+    projectTag: ["TypeScript", "CSS", "SCSS", "JavaScript"],
   },
   {
     projectName: "_Simple-calendar",
@@ -124,14 +113,7 @@ export const projectList = [
       gitHub: "https://github.com/duynhannguyen/calendar-project",
       live: "https://calendar-project-kappa.vercel.app/",
     },
-    projectTag: [
-      { tech: "TypeScript", icon: "TS" },
-      {
-        tech: "CSS",
-        icon: "CSS",
-      },
-      { tech: "JavaScript", icon: "JavaScript" },
-    ],
+    projectTag: ["TypeScript", "CSS", "JavaScript"],
   },
   {
     projectName: "_Password Generator",
@@ -144,14 +126,7 @@ export const projectList = [
       gitHub: "https://github.com/duynhannguyen/password-generator",
       live: "https://password-generator-plum-beta.vercel.app/",
     },
-    projectTag: [
-      { tech: "TypeScript", icon: "TS" },
-      {
-        tech: "CSS",
-        icon: "CSS",
-      },
-      { tech: "JavaScript", icon: "JavaScript" },
-    ],
+    projectTag: ["TypeScript", "CSS", "JavaScript"],
   },
   {
     projectName: "_Password Generator",
@@ -164,14 +139,7 @@ export const projectList = [
       gitHub: "https://github.com/duynhannguyen/password-generator",
       live: "https://password-generator-plum-beta.vercel.app/",
     },
-    projectTag: [
-      { tech: "TypeScript", icon: "TS" },
-      {
-        tech: "CSS",
-        icon: "CSS",
-      },
-      { tech: "JavaScript", icon: "JavaScript" },
-    ],
+    projectTag: ["TypeScript", "CSS", "JavaScript"],
   },
   {
     projectName: "_Password Generator",
@@ -184,14 +152,7 @@ export const projectList = [
       gitHub: "https://github.com/duynhannguyen/password-generator",
       live: "https://password-generator-plum-beta.vercel.app/",
     },
-    projectTag: [
-      { tech: "TypeScript", icon: "TS" },
-      {
-        tech: "CSS",
-        icon: "CSS",
-      },
-      { tech: "JavaScript", icon: "JavaScript" },
-    ],
+    projectTag: ["TypeScript", "CSS", "JavaScript"],
   },
   {
     projectName: "_Password Generator",
@@ -204,14 +165,7 @@ export const projectList = [
       gitHub: "https://github.com/duynhannguyen/password-generator",
       live: "https://password-generator-plum-beta.vercel.app/",
     },
-    projectTag: [
-      { tech: "TypeScript", icon: "TS" },
-      {
-        tech: "CSS",
-        icon: "CSS",
-      },
-      { tech: "JavaScript", icon: "JavaScript" },
-    ],
+    projectTag: ["TypeScript", "CSS", "JavaScript"],
   },
   {
     projectName: "_Password Generator",
@@ -224,14 +178,7 @@ export const projectList = [
       gitHub: "https://github.com/duynhannguyen/password-generator",
       live: "https://password-generator-plum-beta.vercel.app/",
     },
-    projectTag: [
-      { tech: "TypeScript", icon: "TS" },
-      {
-        tech: "CSS",
-        icon: "CSS",
-      },
-      { tech: "JavaScript", icon: "JavaScript" },
-    ],
+    projectTag: ["TypeScript", "CSS", "JavaScript"],
   },
   {
     projectName: "_Password Generator",
@@ -244,14 +191,7 @@ export const projectList = [
       gitHub: "https://github.com/duynhannguyen/password-generator",
       live: "https://password-generator-plum-beta.vercel.app/",
     },
-    projectTag: [
-      { tech: "TypeScript", icon: "TS" },
-      {
-        tech: "CSS",
-        icon: "CSS",
-      },
-      { tech: "JavaScript", icon: "JavaScript" },
-    ],
+    projectTag: ["TypeScript", "CSS", "JavaScript"],
   },
   {
     projectName: "_Password Generator",
@@ -264,14 +204,7 @@ export const projectList = [
       gitHub: "https://github.com/duynhannguyen/password-generator",
       live: "https://password-generator-plum-beta.vercel.app/",
     },
-    projectTag: [
-      { tech: "TypeScript", icon: "TS" },
-      {
-        tech: "CSS",
-        icon: "CSS",
-      },
-      { tech: "JavaScript", icon: "JavaScript" },
-    ],
+    projectTag: ["TypeScript", "CSS", "JavaScript"],
   },
 ];
 

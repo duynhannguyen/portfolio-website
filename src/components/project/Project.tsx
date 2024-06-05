@@ -1,23 +1,21 @@
-import { useState } from "react";
 import { projectList } from "../../constants/constants";
 import ProjectCard from "../projectCard/ProjectCard";
 import "./Project.css";
 
 type ProjectProps = {
-  fillterOptions: string[];
+  myProjects: typeof projectList;
 };
 
-const Project = ({ fillterOptions }: ProjectProps) => {
-  const [myProjects, setMyProjects] = useState(projectList);
-
-  const getDesiredProject = myProjects.filter((project) => {
-    const projectTags = project.projectTag;
-    const findProject = projectTags.find((item) =>
-      fillterOptions.includes(item.tech)
-    );
-    return findProject;
-  });
-  console.log("getDesiredProject", getDesiredProject);
+const Project = ({ myProjects }: ProjectProps) => {
+  // console.log("myProjects", myProjects);
+  // const getDesiredProject = myProjects.filter((project) => {
+  //   const projectTags = project.projectTag;
+  //   const findProject = projectTags.find((item) =>
+  //     fillterOptions.includes(item.tech)
+  //   );
+  //   return findProject;
+  // });
+  // console.log("getDesiredProject", getDesiredProject);
 
   return (
     <div className="project-wrap">

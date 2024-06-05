@@ -11,7 +11,12 @@ import {
   useEffect,
   useState,
 } from "react";
-import { ChildrenType, fileList, mainPage } from "../../constants/constants";
+import {
+  ChildrenType,
+  fileList,
+  mainPage,
+  projectList,
+} from "../../constants/constants";
 import ProjectFillter from "../projectFillter/ProjectFillter";
 import Project from "../project/Project";
 
@@ -95,7 +100,7 @@ const FolderStructure = ({
       const projectsTab: ChildrenType = {
         title: title,
         key: mainPage.project,
-        component: <Project fillterOptions={fillterOptions} />,
+        component: <Project myProjects={projectList} />,
         isActive: true,
       };
       const newTabBar = showTabBar.map((tab) => {
@@ -106,7 +111,7 @@ const FolderStructure = ({
 
       return addNewTabBar;
     },
-    [showTabBar]
+    [showTabBar, fillterOptions]
   );
   const isProjectPageExit = showTabBar.find(
     (tab) => tab.title === mainPage.project

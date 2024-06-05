@@ -1,10 +1,12 @@
-import { Dispatch, Fragment, Key, SetStateAction } from "react";
-import { ChildrenType } from "../../constants/constants";
+import { Dispatch, Fragment, Key, SetStateAction, useEffect } from "react";
+import { ChildrenType, mainPage, projectList } from "../../constants/constants";
 import TabBar from "../tabBar/TabBar";
 import "./ContentSection.css";
+import Project from "../project/Project";
 
 type ContentSectionProps = {
   showTabBar: ChildrenType[];
+  setShowTabBar: Dispatch<SetStateAction<ChildrenType[]>>;
   activeFileToShow: (key: Key) => void;
   handleCloseTab: (
     key: Key,
@@ -13,6 +15,7 @@ type ContentSectionProps = {
   selectedKey: Key[];
   setSelectdKey: Dispatch<SetStateAction<Key[]>>;
   folderTitle: string;
+  myProjects: typeof projectList;
 };
 
 const ContentSection = ({
@@ -21,7 +24,29 @@ const ContentSection = ({
   activeFileToShow,
   setSelectdKey,
   selectedKey,
+  myProjects,
+  setShowTabBar,
 }: ContentSectionProps) => {
+  const findPageInTabList = showTabBar.find(
+    (page) => page.title === mainPage.project
+  );
+  useEffect(() => {
+    if (findPageInTabList) {
+      updatePropsOfProjectPage();
+    }
+  }, [myProjects, findPageInTabList]);
+  const updatePropsOfProjectPage = () => {
+    const duplicateTabBar = [...showTabBar];
+    const ProjectPageIndex = duplicateTabBar.findIndex((item) => item.isActive);
+    duplicateTabBar[ProjectPageIndex].component = (
+      <Project myProjects={myProjects} />
+    );
+    console.log("duplicateTabBar", duplicateTabBar);
+    setShowTabBar(duplicateTabBar);
+  };
+  // if (findPageInTabList) {
+  //   updatePropsOfProjectPage();
+  // }
   return (
     <nav className="content-section-container">
       <div className="tab-bar-section">
@@ -40,6 +65,7 @@ const ContentSection = ({
             return <Fragment key={file.key}> {file.component} </Fragment>;
           }
         })}
+        {/* {ProjectPage()} */}
       </div>
     </nav>
   );
