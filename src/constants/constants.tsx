@@ -2,7 +2,8 @@ import { Key, ReactNode } from "react";
 import AboutMe from "../components/aboutMe/AboutMe";
 import Education from "../components/education/Education";
 import MyResume from "../components/myResume/MyResume";
-import { FaFileCode, FaGamepad, FaUser } from "react-icons/fa6";
+import { FaFileCode, FaUser } from "react-icons/fa6";
+import { FaMailBulk } from "react-icons/fa";
 
 type FileListType = {
   title: string;
@@ -69,7 +70,7 @@ export const fileList: FileListType[] = [
 export const mainPage = {
   personal: "Personal info",
   project: "Projects",
-  hobbies: "Hobbies",
+  contact: "Contact",
 };
 
 export const iconList = [
@@ -82,8 +83,8 @@ export const iconList = [
     title: mainPage.project,
   },
   {
-    icon: <FaGamepad title="Hobbies" />,
-    title: mainPage.hobbies,
+    icon: <FaMailBulk title="Contact" />,
+    title: mainPage.contact,
   },
 ];
 

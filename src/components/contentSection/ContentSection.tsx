@@ -41,12 +41,9 @@ const ContentSection = ({
     duplicateTabBar[ProjectPageIndex].component = (
       <Project myProjects={myProjects} />
     );
-    // console.log("duplicateTabBar", duplicateTabBar);
     setShowTabBar(duplicateTabBar);
   };
-  // if (findPageInTabList) {
-  //   updatePropsOfProjectPage();
-  // }
+
   return (
     <nav className="content-section-container">
       <div className="tab-bar-section">

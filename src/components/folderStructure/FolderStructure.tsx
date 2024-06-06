@@ -19,6 +19,7 @@ import {
 } from "../../constants/constants";
 import ProjectFillter from "../projectFillter/ProjectFillter";
 import Project from "../project/Project";
+import ContactSection from "../contactSection/ContactSection";
 
 type FolderStructureProps = {
   folderTitle: string;
@@ -120,7 +121,7 @@ const FolderStructure = ({
   const showFolderByTitle = useCallback(() => {
     let tree: ReactNode = null;
     switch (folderTitle) {
-      case "Projects":
+      case mainPage.project:
         tree = (
           <ProjectFillter
             getFillter={getFillter}
@@ -129,7 +130,9 @@ const FolderStructure = ({
         );
 
         break;
-
+      case mainPage.contact:
+        tree = <ContactSection />;
+        break;
       default:
         tree = (
           <Tree

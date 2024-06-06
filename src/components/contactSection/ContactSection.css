@@ -1,0 +1,16 @@
+.contact {
+  border-bottom: 0.3rem dashed #00337c;
+}
+.contact__line {
+  line-height: 10px;
+  margin-bottom: 1rem;
+}
+.contact__text {
+  vertical-align: middle;
+  white-space: nowrap;
+}
+.contact__icon {
+  vertical-align: middle;
+  margin-right: 0.5rem;
+  font-size: 2rem;
+}/*# sourceMappingURL=ContactSection.css.map */
