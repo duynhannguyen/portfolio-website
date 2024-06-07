@@ -17,11 +17,19 @@ const MainSection = () => {
   const [selectedKey, setSelectdKey] = useState<Key[]>([]);
   const [fillterOptions, setFillterOptions] = useState<string[]>([]);
   const [myProjects, setMyProjects] = useState(projectList);
-  // console.log("showTabBar", showTabBar)
+
   const clickToFolded = (title: string) => {
     if (folderTitle === title) {
       return setFolderTitle("");
     }
+    const showMainPage = showTabBar.map((page) => {
+      page.isActive = false;
+      if (page.key === title) {
+        page.isActive = true;
+      }
+      return page;
+    });
+    setShowTabBar(showMainPage);
     setFolderTitle(title);
   };
   const activeFileToShow = (key: Key) => {
@@ -34,9 +42,16 @@ const MainSection = () => {
       }
       return tab;
     });
-    if (key === mainPage.project) {
-      setFolderTitle(key);
+    console.log("key", key);
+    Object.entries(mainPage).forEach(([mainKey, value]) => {
+      if (value === key) {
+        setFolderTitle(value);
+      }
+    });
+    if (key !== mainPage.project && key !== mainPage.contact) {
+      setFolderTitle(mainPage.personal);
     }
+
     setShowTabBar(showOnlyActiveFile);
     setSelectdKey([key]);
   };
@@ -47,7 +62,6 @@ const MainSection = () => {
     event.stopPropagation();
     const currentFileIndex = showTabBar.findIndex((tab) => tab.key === key);
     const lastTabIndex = showTabBar.length - 1 === currentFileIndex;
-
     if (showTabBar[currentFileIndex].isActive && lastTabIndex) {
       const showLastFile = showTabBar.map((tabs, index) => {
         tabs.isActive = false;
@@ -58,8 +72,10 @@ const MainSection = () => {
       });
       const removeCurrentFile = showLastFile.filter((tab) => tab.key !== key);
       setShowTabBar(removeCurrentFile);
+      setFolderTitle("");
       if (showLastFile.length === 1) {
-        return setSelectdKey([]);
+        setSelectdKey([]);
+        return;
       }
       return setSelectdKey([showLastFile[showLastFile.length - 2].key]);
     }
@@ -74,7 +90,8 @@ const MainSection = () => {
       });
       setShowTabBar(showLastFile);
       if (showLastFile.length === 1) {
-        return setSelectdKey([]);
+        setSelectdKey([]);
+        return;
       }
       return setSelectdKey([showLastFile[showLastFile.length - 1].key]);
     }
