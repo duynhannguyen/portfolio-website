@@ -12,7 +12,7 @@ const ContactSection = () => {
         </p>
         <p className=" contact__line">
           <IoPhonePortrait className="contact__icon" />
-          <span className="contact__text">+84905862741 </span>
+          <span className="contact__text"> (+84)905862741 </span>
         </p>
       </div>
     </section>

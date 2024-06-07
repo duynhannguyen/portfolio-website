@@ -20,6 +20,7 @@ import {
 import ProjectFillter from "../projectFillter/ProjectFillter";
 import Project from "../project/Project";
 import ContactSection from "../contactSection/ContactSection";
+import ContactForm from "../contactForm/ContactForm";
 
 type FolderStructureProps = {
   folderTitle: string;
@@ -114,8 +115,28 @@ const FolderStructure = ({
     },
     [showTabBar, fillterOptions]
   );
+  const addContactPage = useCallback(
+    (title: string): ChildrenType[] => {
+      const contactTab: ChildrenType = {
+        title: title,
+        key: mainPage.contact,
+        component: <ContactForm />,
+        isActive: true,
+      };
+      const newTabBar = showTabBar.map((tab) => {
+        tab.isActive = false;
+        return tab;
+      });
+      const addNewTabBar: ChildrenType[] = [...newTabBar, contactTab];
+      return addNewTabBar;
+    },
+    [showTabBar]
+  );
   const isProjectPageExit = showTabBar.find(
     (tab) => tab.title === mainPage.project
+  );
+  const isContactPageExit = showTabBar.find(
+    (tab) => tab.title === mainPage.contact
   );
 
   const showFolderByTitle = useCallback(() => {
@@ -156,12 +177,19 @@ const FolderStructure = ({
       const addingPage = addProjectPage(folderTitle);
       setShowTabBar(addingPage);
     }
+    if (!isContactPageExit && folderTitle === mainPage.contact) {
+      showFolderByTitle();
+      const addingPage = addContactPage(folderTitle);
+      setShowTabBar(addingPage);
+    }
   }, [
     folderTitle,
     addProjectPage,
     isProjectPageExit,
     showFolderByTitle,
     setShowTabBar,
+    addContactPage,
+    isContactPageExit,
   ]);
 
   return (
