@@ -16,11 +16,13 @@ const MainSection = () => {
   const [showTabBar, setShowTabBar] = useState<ChildrenType[]>([]);
   const [selectedKey, setSelectdKey] = useState<Key[]>([]);
   const [fillterOptions, setFillterOptions] = useState<string[]>([]);
+
   const [myProjects, setMyProjects] = useState(projectList);
 
   const clickToFolded = (title: string) => {
     if (folderTitle === title) {
-      return setFolderTitle("");
+      setFolderTitle("");
+      return;
     }
     const showMainPage = showTabBar.map((page) => {
       page.isActive = false;
@@ -42,7 +44,6 @@ const MainSection = () => {
       }
       return tab;
     });
-    console.log("key", key);
     Object.entries(mainPage).forEach(([mainKey, value]) => {
       if (value === key) {
         setFolderTitle(value);
@@ -88,6 +89,8 @@ const MainSection = () => {
         }
         return tabs;
       });
+      console.log("showLastFile", showLastFile);
+      setFolderTitle("");
       setShowTabBar(showLastFile);
       if (showLastFile.length === 1) {
         setSelectdKey([]);

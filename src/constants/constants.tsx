@@ -18,6 +18,12 @@ export type ChildrenType = {
   component?: ReactNode;
 };
 
+export const mainPage = {
+  personal: "Personal info",
+  project: "Projects",
+  contact: "Contact",
+};
+
 export const fileList: FileListType[] = [
   {
     title: "Bio",
@@ -67,23 +73,17 @@ export const fileList: FileListType[] = [
   },
 ];
 
-export const mainPage = {
-  personal: "Personal info",
-  project: "Projects",
-  contact: "Contact",
-};
-
 export const iconList = [
   {
-    icon: <FaUser title="Personal info" />,
+    icon: <FaUser title={mainPage.personal} />,
     title: mainPage.personal,
   },
   {
-    icon: <FaFileCode title="Projects" />,
+    icon: <FaFileCode title={mainPage.project} />,
     title: mainPage.project,
   },
   {
-    icon: <FaMailBulk title="Contact" />,
+    icon: <FaMailBulk title={mainPage.contact} />,
     title: mainPage.contact,
   },
 ];

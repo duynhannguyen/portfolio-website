@@ -27,14 +27,15 @@ const ContentSection = ({
   myProjects,
   setShowTabBar,
 }: ContentSectionProps) => {
-  const findPageInTabList = showTabBar.find(
+  const findProjectPageInTabList = showTabBar.find(
     (page) => page.title === mainPage.project
   );
+
   useEffect(() => {
-    if (findPageInTabList) {
+    if (findProjectPageInTabList) {
       updatePropsOfProjectPage();
     }
-  }, [myProjects, findPageInTabList]);
+  }, [myProjects, findProjectPageInTabList]);
   const updatePropsOfProjectPage = () => {
     const duplicateTabBar = [...showTabBar];
     const ProjectPageIndex = duplicateTabBar.findIndex((item) => item.isActive);
