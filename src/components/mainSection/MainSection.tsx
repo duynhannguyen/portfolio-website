@@ -16,7 +16,6 @@ const MainSection = () => {
   const [showTabBar, setShowTabBar] = useState<ChildrenType[]>([]);
   const [selectedKey, setSelectdKey] = useState<Key[]>([]);
   const [fillterOptions, setFillterOptions] = useState<string[]>([]);
-
   const [myProjects, setMyProjects] = useState(projectList);
 
   const clickToFolded = (title: string) => {

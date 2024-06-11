@@ -30,12 +30,20 @@
   color: #03c988;
   padding-left: 1rem;
   font-size: 1.8rem;
-  margin-bottom: 2.5rem;
   transition: all 0.4s;
 }
 .contact-form__submit .form-submit__input:focus-visible, .contact-form__submit .form-submit__input:hover {
   outline: none;
   border: 0.2rem solid #1c82ad;
+}
+.contact-form__submit .form-submit__error {
+  color: #ff000f;
+  height: 3.5rem;
+  line-height: 3.5rem;
+}
+.contact-form__submit .form-submit__error-text {
+  font-size: 1.3rem;
+  vertical-align: middle;
 }
 .contact-form__submit .form-submit__textarea {
   width: 100%;
@@ -47,7 +55,6 @@
   color: #03c988;
   padding-left: 1rem;
   font-size: 1.8rem;
-  margin-bottom: 2.5rem;
   transition: all 0.4s;
 }
 .contact-form__submit .form-submit__textarea:focus-visible, .contact-form__submit .form-submit__textarea:hover {
