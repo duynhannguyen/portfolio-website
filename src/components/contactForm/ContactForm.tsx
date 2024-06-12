@@ -1,9 +1,8 @@
 import { useForm } from "react-hook-form";
 import "./ContactForm.css";
-import { useEffect, useRef, useState } from "react";
-import hljs from "highlight.js";
-import "highlight.js/styles/night-owl.min.css";
-import javascript from "highlight.js/lib/languages/javascript";
+import "highlight.js/styles/base16/atelier-sulphurpool.css";
+import { useState, useEffect } from "react";
+import Highlight from "react-highlight";
 type FormValues = {
   name?: string;
   email?: string;
@@ -43,18 +42,29 @@ const ContactForm = () => {
     };
   }, [watch]);
 
-  useEffect(() => {
-    hljs.registerLanguage("javascript", javascript);
-    hljs.highlightAll();
-    if (codeRef.current) {
-      hljs.highlightBlock(codeRef.current);
-    }
-  }, []);
+  const date = new Date();
+  const option: {
+    weekday: "short" | "long" | "narrow";
+    day: "numeric" | "2-digit" | undefined;
+    month: "short" | "long" | "narrow";
+  } = { weekday: "short", day: "numeric", month: "short" };
+  const formattedDate = date.toLocaleDateString("en-US", option);
+
+  // useEffect(() => {
+  //   const highlightCode = () => {
+  //     hljs.registerLanguage("javascript", javascript);
+  //     hljs.highlightAll();
+  //     if (codeRef.current) {
+  //       hljs.highlightBlock(codeRef.current);
+  //     }
+  //   };
+  //   highlightCode();
+  // }, []);
 
   const onSubmit = (data: FormValues) => {
     console.log("data", data);
   };
-  const codeRef = useRef(null);
+  // const codeRef = useRef(null);
   return (
     <div className="contact-form">
       <div className=" contact-form__submit ">
@@ -123,11 +133,22 @@ const ContactForm = () => {
         </form>
       </div>
       <div className="contact-form__preview">
-        <pre>
-          <code ref={codeRef} className="language-javascript">
-            function helloWorld() const a = {inputValue?.email}
-          </code>
-        </pre>
+        <Highlight className="preview-code" language="javascript">
+          {`
+  const button = document.querySelector('#sendBtn')
+
+  const message = {
+    name:${inputValue?.name};
+    email:${inputValue?.email};
+    message:${inputValue?.message};
+    date: ${formattedDate}
+  }
+  button.addEventListener('click', () => {
+    form.send(message);
+  })
+
+          `}
+        </Highlight>
       </div>
     </div>
   );
