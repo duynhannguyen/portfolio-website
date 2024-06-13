@@ -94,6 +94,7 @@ const ContactForm = () => {
           <input
             {...register("email", {
               required: "This input is required",
+              pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
             })}
             className="form-submit__input"
             placeholder=""
@@ -105,6 +106,7 @@ const ContactForm = () => {
               <p className="form-submit__error-text">
                 {" "}
                 {errors.email.message}{" "}
+                {errors.email.type === "pattern" && "Invalid email address "}
               </p>
             )}
           </div>
@@ -133,15 +135,15 @@ const ContactForm = () => {
         </form>
       </div>
       <div className="contact-form__preview">
-        <Highlight className="preview-code" language="javascript">
+        <Highlight className="preview-code javascript ">
           {`
   const button = document.querySelector('#sendBtn')
 
   const message = {
-    name:${inputValue?.name};
-    email:${inputValue?.email};
-    message:${inputValue?.message};
-    date: ${formattedDate}
+    name: "${inputValue?.name}";
+    email: "${inputValue?.email}";
+    message: "${inputValue?.message}";
+    date: "${formattedDate}"
   }
   button.addEventListener('click', () => {
     form.send(message);

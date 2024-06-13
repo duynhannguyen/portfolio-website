@@ -15,7 +15,6 @@
     .form-submit {
       width: 85%;
       height: 80%;
-      border: 0.1rem solid red;
 
       &__label {
         display: block;
@@ -105,12 +104,6 @@
       background-color: $bgDarkMode;
       font-size: 2rem;
       text-align: left;
-      // &__text {
-      //   width: 100%;
-      //   height: 100%;
-      //   text-align: center;
-      //   display: block;
-      // }
     }
   }
 }

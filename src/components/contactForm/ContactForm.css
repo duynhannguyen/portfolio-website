@@ -15,7 +15,6 @@
 .contact-form__submit .form-submit {
   width: 85%;
   height: 80%;
-  border: 0.1rem solid red;
 }
 .contact-form__submit .form-submit__label {
   display: block;
