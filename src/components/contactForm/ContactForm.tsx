@@ -3,14 +3,15 @@ import "./ContactForm.css";
 import "highlight.js/styles/base16/atelier-sulphurpool.css";
 import { useState, useEffect } from "react";
 import Highlight from "react-highlight";
-type FormValues = {
-  name?: string;
-  email?: string;
-  message?: string;
+import MailAPI from "../../services/mailAPI";
+export type FormEmailValues = {
+  name: string;
+  email: string;
+  message: string;
 };
 
 const ContactForm = () => {
-  const [inputValue, setInputValue] = useState<FormValues | undefined>({
+  const [inputValue, setInputValue] = useState<FormEmailValues | undefined>({
     name: "",
     email: "",
     message: "",
@@ -20,7 +21,7 @@ const ContactForm = () => {
     handleSubmit,
     watch,
     formState: { errors },
-  } = useForm<FormValues>({
+  } = useForm<FormEmailValues>({
     defaultValues: {
       name: "",
       email: "",
@@ -29,13 +30,15 @@ const ContactForm = () => {
   });
 
   useEffect(() => {
-    const subscription = watch((data) =>
-      setInputValue({
-        name: data.name,
-        email: data.email,
-        message: data.message,
-      })
-    );
+    const subscription = watch((data) => {
+      if (data.email && data.name && data.message) {
+        setInputValue({
+          name: data.name,
+          email: data.email,
+          message: data.message,
+        });
+      }
+    });
 
     return () => {
       subscription.unsubscribe();
@@ -50,21 +53,16 @@ const ContactForm = () => {
   } = { weekday: "short", day: "numeric", month: "short" };
   const formattedDate = date.toLocaleDateString("en-US", option);
 
-  // useEffect(() => {
-  //   const highlightCode = () => {
-  //     hljs.registerLanguage("javascript", javascript);
-  //     hljs.highlightAll();
-  //     if (codeRef.current) {
-  //       hljs.highlightBlock(codeRef.current);
-  //     }
-  //   };
-  //   highlightCode();
-  // }, []);
+  const onSubmit = async (data: FormEmailValues) => {
+    try {
+      console.log("data", data);
 
-  const onSubmit = (data: FormValues) => {
-    console.log("data", data);
+      await MailAPI.sendMail(data);
+    } catch (error) {
+      console.log("error", error);
+    }
   };
-  // const codeRef = useRef(null);
+
   return (
     <div className="contact-form">
       <div className=" contact-form__submit ">
