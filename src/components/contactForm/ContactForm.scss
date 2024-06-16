@@ -84,6 +84,32 @@
         }
       }
     }
+    .email-noti {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      row-gap: 1rem;
+      padding: 0 5rem;
+      &-title {
+        font-size: 2.3rem;
+        font-weight: 500;
+        color: #fff;
+      }
+      &-message {
+        margin-bottom: 3rem;
+      }
+      &-btn {
+        background-color: $textDarkMode;
+        color: #fff;
+        padding: 1rem 2rem;
+        border-radius: 0.8rem;
+        cursor: pointer;
+        transition: all 0.4s;
+        &:hover {
+          background-color: $hightLightDarkMode;
+        }
+      }
+    }
   }
   &__preview {
     width: 100%;
