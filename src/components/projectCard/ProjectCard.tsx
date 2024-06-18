@@ -9,7 +9,6 @@ const ProjectCard = ({
   projectImg,
   projectDescr,
   projectLink,
-  projectTag,
 }: ProjectCardProps) => {
   return (
     <div className="project-card-wrap">

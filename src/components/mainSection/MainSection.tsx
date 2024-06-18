@@ -44,6 +44,7 @@ const MainSection = () => {
       return tab;
     });
     Object.entries(mainPage).forEach(([mainKey, value]) => {
+      mainKey;
       if (value === key) {
         setFolderTitle(value);
       }
@@ -139,17 +140,6 @@ const MainSection = () => {
         folderTitle={folderTitle}
       />
 
-      {/* {folderTitle && (
-        <FolderStructure
-          showTabBar={showTabBar}
-          setShowTabBar={setShowTabBar}
-          folderTitle={folderTitle}
-          setSelectdKey={setSelectdKey}
-          selectedKey={selectedKey}
-          getFillter={getFillter}
-          fillterOptions={fillterOptions}
-        />
-      )} */}
       <div className={`${folderTitle ? "folder-expand" : "folder-collaspe"}`}>
         {folderTitle && (
           <FolderStructure

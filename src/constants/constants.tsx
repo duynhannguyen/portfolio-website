@@ -155,58 +155,6 @@ export const projectList = [
     },
     projectTag: ["HTML", "CSS"],
   },
-  {
-    projectName: "_Password Generator",
-    projectImg: {
-      front: "../password-generator-img/password-generator-front.png",
-      back: "../password-generator-img/password-generator-back.png",
-    },
-    projectDescr: "Generate a password based on specific options ",
-    projectLink: {
-      gitHub: "https://github.com/duynhannguyen/password-generator",
-      live: "https://password-generator-plum-beta.vercel.app/",
-    },
-    projectTag: ["TypeScript", "CSS", "JavaScript"],
-  },
-  {
-    projectName: "_Password Generator",
-    projectImg: {
-      front: "../password-generator-img/password-generator-front.png",
-      back: "../password-generator-img/password-generator-back.png",
-    },
-    projectDescr: "Generate a password based on specific options ",
-    projectLink: {
-      gitHub: "https://github.com/duynhannguyen/password-generator",
-      live: "https://password-generator-plum-beta.vercel.app/",
-    },
-    projectTag: ["TypeScript", "CSS", "JavaScript"],
-  },
-  {
-    projectName: "_Password Generator",
-    projectImg: {
-      front: "../password-generator-img/password-generator-front.png",
-      back: "../password-generator-img/password-generator-back.png",
-    },
-    projectDescr: "Generate a password based on specific options ",
-    projectLink: {
-      gitHub: "https://github.com/duynhannguyen/password-generator",
-      live: "https://password-generator-plum-beta.vercel.app/",
-    },
-    projectTag: ["TypeScript", "CSS", "JavaScript"],
-  },
-  {
-    projectName: "_Password Generator",
-    projectImg: {
-      front: "../password-generator-img/password-generator-front.png",
-      back: "../password-generator-img/password-generator-back.png",
-    },
-    projectDescr: "Generate a password based on specific options ",
-    projectLink: {
-      gitHub: "https://github.com/duynhannguyen/password-generator",
-      live: "https://password-generator-plum-beta.vercel.app/",
-    },
-    projectTag: ["TypeScript", "CSS", "JavaScript"],
-  },
 ];
 
 export const techList = [
