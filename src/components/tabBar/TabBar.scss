@@ -6,6 +6,7 @@
   .active-tab-container {
     color: white;
     background-color: $hightLightDarkMode;
+    transition: all 0.4s;
   }
   .tab-container {
     @include drawBorder($right: "true", $bcolor: $borderDarkMode);
@@ -15,7 +16,7 @@
     gap: 1rem;
     justify-content: space-between;
     cursor: pointer;
-
+    transition: all 0.4s;
     .close-mark {
       visibility: hidden;
       min-width: 2rem;
@@ -26,8 +27,12 @@
         background-color: rgba($color: $textDarkMode, $alpha: 0.8);
       }
     }
+    &:not(:hover) > .close-mark {
+      @include fade-out();
+    }
     &:hover > .close-mark {
       visibility: visible;
+      @include fade-in();
     }
   }
 }

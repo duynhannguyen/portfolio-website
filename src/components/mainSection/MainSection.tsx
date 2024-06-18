@@ -138,7 +138,8 @@ const MainSection = () => {
         clickToFolded={clickToFolded}
         folderTitle={folderTitle}
       />
-      {folderTitle && (
+
+      {/* {folderTitle && (
         <FolderStructure
           showTabBar={showTabBar}
           setShowTabBar={setShowTabBar}
@@ -148,7 +149,20 @@ const MainSection = () => {
           getFillter={getFillter}
           fillterOptions={fillterOptions}
         />
-      )}
+      )} */}
+      <div className={`${folderTitle ? "folder-expand" : "folder-collaspe"}`}>
+        {folderTitle && (
+          <FolderStructure
+            showTabBar={showTabBar}
+            setShowTabBar={setShowTabBar}
+            folderTitle={folderTitle}
+            setSelectdKey={setSelectdKey}
+            selectedKey={selectedKey}
+            getFillter={getFillter}
+            fillterOptions={fillterOptions}
+          />
+        )}
+      </div>
 
       {showTabBar.length === 0 && (
         <section className="welcome-container">

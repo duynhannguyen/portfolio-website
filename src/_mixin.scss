@@ -21,6 +21,85 @@
   }
 }
 
+@mixin zoom-in() {
+  @keyframes zoom-in {
+    0% {
+      opacity: 0;
+      transform: scale(0);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  transition: all 0.4s;
+  animation: fade-in 0.4s;
+}
+
+@mixin fade-in() {
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  transition: all 0.4s;
+  animation: fade-in 0.4s;
+}
+
+@mixin fade-out() {
+  @keyframes fade-out {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      display: none;
+    }
+  }
+  transition: all 0.4s;
+  animation: fade-out 0.4s;
+}
+
+@mixin expand() {
+  @keyframes expand {
+    0% {
+      width: 0%;
+      min-width: 0%;
+    }
+    100% {
+      width: 20%;
+      min-width: 20%;
+    }
+  }
+  transition: all 0.4s;
+  animation: expand 0.4s;
+}
+
+@mixin collapse() {
+  @keyframes collapse {
+    0% {
+      width: 20%;
+      min-width: 20%;
+      @include drawBorder($right: "true", $bcolor: $borderDarkMode);
+    }
+
+    80% {
+      @include drawBorder($right: "true", $bcolor: $borderDarkMode);
+    }
+    100% {
+      width: 0%;
+      min-width: 0%;
+      display: none;
+      @include drawBorder($right: "", $bcolor: $borderDarkMode);
+    }
+  }
+  transition: all 0.4s;
+  animation: collapse 0.4s;
+}
+
 @mixin slide-in(
   $top: "",
   $left: "",

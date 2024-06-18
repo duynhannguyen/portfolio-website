@@ -2,9 +2,25 @@
 @import "../../mixin";
 
 .folder-structure-wrap {
+  width: 100%;
+  min-width: 100%;
+}
+.folder-structure-wrap1 {
   width: 20%;
   min-width: 20%;
   @include drawBorder($right: "true", $bcolor: $borderDarkMode);
+}
+.folder-expand {
+  width: 20%;
+  min-width: 20%;
+  @include drawBorder($right: "true", $bcolor: $borderDarkMode);
+  @include expand();
+}
+.folder-collaspe {
+  @include collapse();
+}
+.collapse-floder {
+  @include collapse();
 }
 .title {
   text-align: center;

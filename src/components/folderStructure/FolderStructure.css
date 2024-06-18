@@ -1,7 +1,70 @@
 .folder-structure-wrap {
+  width: 100%;
+  min-width: 100%;
+}
+
+.folder-structure-wrap1 {
   width: 20%;
   min-width: 20%;
   border-right: 2px solid #00337c;
+}
+
+.folder-expand {
+  width: 20%;
+  min-width: 20%;
+  border-right: 2px solid #00337c;
+  transition: all 0.4s;
+  animation: expand 0.4s;
+}
+@keyframes expand {
+  0% {
+    width: 0%;
+    min-width: 0%;
+  }
+  100% {
+    width: 20%;
+    min-width: 20%;
+  }
+}
+
+.folder-collaspe {
+  transition: all 0.4s;
+  animation: collapse 0.4s;
+}
+@keyframes collapse {
+  0% {
+    width: 20%;
+    min-width: 20%;
+    border-right: 2px solid #00337c;
+  }
+  80% {
+    border-right: 2px solid #00337c;
+  }
+  100% {
+    width: 0%;
+    min-width: 0%;
+    display: none;
+  }
+}
+
+.collapse-floder {
+  transition: all 0.4s;
+  animation: collapse 0.4s;
+}
+@keyframes collapse {
+  0% {
+    width: 20%;
+    min-width: 20%;
+    border-right: 2px solid #00337c;
+  }
+  80% {
+    border-right: 2px solid #00337c;
+  }
+  100% {
+    width: 0%;
+    min-width: 0%;
+    display: none;
+  }
 }
 
 .title {

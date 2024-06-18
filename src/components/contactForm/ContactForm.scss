@@ -15,7 +15,7 @@
     .form-submit {
       width: 85%;
       height: 80%;
-
+      @include fade-in();
       &__label {
         display: block;
         margin-bottom: 0.5rem;
@@ -90,6 +90,7 @@
       align-items: center;
       row-gap: 1rem;
       padding: 0 5rem;
+      @include fade-in();
       &-title {
         font-size: 2.3rem;
         font-weight: 500;
@@ -117,6 +118,7 @@
     display: flex;
     align-items: center;
     justify-content: start;
+    @include fade-in();
     pre {
       width: 100%;
       height: 80%;
