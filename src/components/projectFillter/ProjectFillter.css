@@ -35,8 +35,8 @@
   top: 50%;
   left: 0;
   transform: translateY(-50%);
-  width: 2.3rem;
-  height: 2.3rem;
+  width: 2rem;
+  height: 2rem;
   border: 0.2rem solid #00337c;
   border-radius: 0.4rem;
 }
@@ -50,11 +50,11 @@
 .fillter-option-text .frameWork-icon {
   vertical-align: middle;
   margin-right: 0.2rem;
-  height: 2.3rem;
-  width: 2.3rem;
+  height: 2rem;
+  width: 2rem;
   transition: all 0.2s;
 }
 .fillter-option-text .frameWork-text {
-  font-size: 2.3rem;
+  font-size: 2rem;
   transition: all 0.2s;
 }/*# sourceMappingURL=ProjectFillter.css.map */

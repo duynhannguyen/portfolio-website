@@ -77,8 +77,12 @@
   justify-content: end;
 }
 .contact-form__submit .form-submit__btn-text {
+  height: 6rem;
+  width: 20rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: #9da1a1;
-  padding: 1rem 2rem;
   border-radius: 4px;
   background-color: #00337c;
   transition: all 0.4s;

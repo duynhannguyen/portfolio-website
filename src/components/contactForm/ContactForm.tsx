@@ -4,6 +4,7 @@ import "highlight.js/styles/base16/atelier-sulphurpool.css";
 import { useState, useEffect } from "react";
 import Highlight from "react-highlight";
 import MailAPI from "../../services/mailAPI";
+import Loading from "../loading/Loading";
 export type FormEmailValues = {
   name?: string;
   email?: string;
@@ -22,7 +23,7 @@ const ContactForm = () => {
     handleSubmit,
     watch,
     reset,
-    formState: { errors },
+    formState: { errors, isSubmitting },
   } = useForm<FormEmailValues>({
     defaultValues: {
       name: "",
@@ -55,15 +56,18 @@ const ContactForm = () => {
 
   const onSubmit = async (data: FormEmailValues) => {
     try {
-      console.log("data", data);
+      setFormLoading(true);
       setSendMailSuccess(false);
+
       const sendMail = await MailAPI.sendMail(data);
       if (sendMail.status === 200) {
         setSendMailSuccess(true);
       }
-      reset();
     } catch (error) {
       console.log("error", error);
+    } finally {
+      setFormLoading(false);
+      reset();
     }
   };
 
@@ -154,7 +158,9 @@ const ContactForm = () => {
               )}
             </div>
             <button type="submit" className="form-submit__btn">
-              <p className="form-submit__btn-text">_Send-message</p>
+              <div className="form-submit__btn-text">
+                {isSubmitting ? <Loading /> : "_Send-message"}
+              </div>
             </button>
           </form>
         )}

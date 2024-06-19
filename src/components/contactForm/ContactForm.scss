@@ -73,8 +73,12 @@
         justify-content: end;
       }
       &__btn-text {
+        height: 6rem;
+        width: 20rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         color: $commentText;
-        padding: 1rem 2rem;
         border-radius: 4px;
         background-color: $bgContent;
         transition: all 0.4s;
