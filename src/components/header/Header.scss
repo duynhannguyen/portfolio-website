@@ -11,6 +11,15 @@
     @include slide-in($top: "true");
   }
   .header-contact {
+    height: 2rem;
     @include slide-in($top: "true");
+    transition: all 0.2s;
+    &:hover {
+      color: #fff;
+    }
+    &-icon {
+      vertical-align: middle;
+    }
+    // vertical-align: middle;
   }
 }

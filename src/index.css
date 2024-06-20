@@ -20,6 +20,22 @@ body {
   font-style: normal;
   height: 100dvh;
   width: 100%;
+  /* Track */
+  /* Handle */
+  /* Handle on hover */
+}
+body ::-webkit-scrollbar {
+  width: 1rem;
+}
+body ::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+body ::-webkit-scrollbar-thumb {
+  background: #1c82ad;
+  border-radius: 10px;
+}
+body ::-webkit-scrollbar-thumb:hover {
+  background: #00337c;
 }
 
 button {

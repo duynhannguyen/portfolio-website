@@ -10,6 +10,7 @@ const ProjectFillter = ({
   getFillter,
   fillterOptions,
 }: ProjectFillterProps) => {
+  techList.sort((item1, item2) => item1.name.localeCompare(item2.name));
   return (
     <div>
       {techList.map((tech) => (
