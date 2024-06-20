@@ -28,11 +28,11 @@ body ::-webkit-scrollbar {
   width: 1rem;
 }
 body ::-webkit-scrollbar-track {
-  border-radius: 10px;
+  border-radius: 1rem;
 }
 body ::-webkit-scrollbar-thumb {
   background: #1c82ad;
-  border-radius: 10px;
+  border-radius: 1rem;
 }
 body ::-webkit-scrollbar-thumb:hover {
   background: #00337c;

@@ -6,13 +6,13 @@
   height: inherit;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 1rem;
   align-items: center;
   @include drawBorder($right: "true", $bcolor: $borderDarkMode);
   .icon-element {
     font-size: 2.5rem;
     width: 100%;
-    height: 50px;
+    height: 5rem;
     align-content: center;
     text-align: center;
     position: relative;
@@ -24,9 +24,9 @@
     .active-icon {
       position: absolute;
       height: 100%;
-      border-left: 2px solid #ffffffab;
+      border-left: 0.2rem solid #ffffffab;
       top: 0;
-      left: -2px;
+      left: -0.2rem;
     }
     &:hover {
       color: #ffffffab;

@@ -2,6 +2,7 @@
 @import "../../mixin";
 
 .footer-wrap {
+  height: 3.8rem;
   @include drawBorder($top: "true", $bcolor: $borderDarkMode);
-  padding: 8px 20px;
+  padding: 0.8rem 2rem;
 }

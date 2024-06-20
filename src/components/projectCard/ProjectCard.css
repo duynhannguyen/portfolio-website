@@ -64,20 +64,20 @@
   color: #fff;
 }
 .project-card-wrap .card-info .card-description-section .card-description {
-  margin-bottom: 10px;
+  margin-bottom: 1rem;
 }
 .project-card-wrap .card-info .card-description-section .card-button {
   flex-grow: 1;
   display: flex;
   align-items: center;
-  gap: 50px;
+  gap: 5rem;
   font-size: 1.8rem;
   color: #fff;
 }
 .project-card-wrap .card-info .card-description-section .card-button .source-code-btn {
   background-color: #03c988;
-  padding: 4px 10px;
-  border-radius: 5px;
+  padding: 0.4rem 1rem;
+  border-radius: 0.5rem;
   transition: all 0.2s;
 }
 .project-card-wrap .card-info .card-description-section .card-button .source-code-btn .source-code-icon {
@@ -89,8 +89,8 @@
 }
 .project-card-wrap .card-info .card-description-section .card-button .live-btn {
   background-color: #03c988;
-  padding: 4px 10px;
-  border-radius: 5px;
+  padding: 0.4rem 1rem;
+  border-radius: 0.5rem;
   transition: all 0.2s;
 }
 .project-card-wrap .card-info .card-description-section .card-button .live-btn .live-icon {
