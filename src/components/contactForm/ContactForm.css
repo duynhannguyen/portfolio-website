@@ -51,9 +51,14 @@
   line-height: 3.5rem;
 }
 .contact-form__submit .form-submit__error-text {
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   vertical-align: middle;
   color: #ff000f;
+}
+.contact-form__submit .form-submit__error-text__waring {
+  font-size: 1.4rem;
+  vertical-align: middle;
+  color: #faad14;
 }
 .contact-form__submit .form-submit__textarea {
   width: 100%;

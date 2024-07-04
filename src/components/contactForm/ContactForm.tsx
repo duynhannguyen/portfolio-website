@@ -78,6 +78,7 @@ const ContactForm = () => {
     } finally {
       () => {
         clearTimeout(timeout);
+        setSendMailStatus("");
         reset();
       };
     }

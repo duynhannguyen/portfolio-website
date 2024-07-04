@@ -44,9 +44,14 @@
         line-height: 3.5rem;
       }
       &__error-text {
-        font-size: 1.3rem;
+        font-size: 1.4rem;
         vertical-align: middle;
         color: #ff000f;
+      }
+      &__error-text__waring {
+        font-size: 1.4rem;
+        vertical-align: middle;
+        color: #faad14;
       }
 
       &__textarea {
