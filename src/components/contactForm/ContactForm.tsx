@@ -18,7 +18,7 @@ const ContactForm = () => {
     message: "",
   });
   const [formError, setFormError] = useState("");
-  const [sendMailSuccess, setSendMailSuccess] = useState(false);
+  const [sendMailStatus, setSendMailStatus] = useState("");
   const {
     register,
     handleSubmit,
@@ -56,13 +56,15 @@ const ContactForm = () => {
   const formattedDate = date.toLocaleDateString("en-US", option);
 
   const onSubmit = async (data: FormEmailValues) => {
+    const timeout = setTimeout(() => {
+      setSendMailStatus("Delayed");
+    }, 20000);
     try {
       setFormError("");
-      setSendMailSuccess(false);
-
+      setSendMailStatus("");
       const sendMail = await MailAPI.sendMail(data);
       if (sendMail.status === 200) {
-        setSendMailSuccess(true);
+        setSendMailStatus("Success");
       }
       if (sendMail.status !== 200) {
         throw new Error(sendMail.data);
@@ -74,14 +76,17 @@ const ContactForm = () => {
         setFormError(stringifyError);
       }
     } finally {
-      reset();
+      () => {
+        clearTimeout(timeout);
+        reset();
+      };
     }
   };
 
   return (
     <div className="contact-form">
       <div className=" contact-form__submit ">
-        {sendMailSuccess ? (
+        {sendMailStatus === "Success" ? (
           <div className="email-noti">
             <h3 className="email-noti-title">Thank you!&#x1F918; </h3>
             <p className="email-noti-message">
@@ -92,7 +97,7 @@ const ContactForm = () => {
             <button
               type="button"
               onClick={() => {
-                setSendMailSuccess(false);
+                setSendMailStatus("");
               }}
               className="email-noti-btn"
             >
@@ -104,6 +109,13 @@ const ContactForm = () => {
             <form onSubmit={handleSubmit(onSubmit)} className="form-submit">
               {formError && (
                 <span className="form-submit__error-text"> {formError} </span>
+              )}
+              {sendMailStatus === "Delayed" && (
+                <span className="form-submit__error-text">
+                  {" "}
+                  This response is taking longer than normal, please wait
+                  &#128549;{" "}
+                </span>
               )}
               <label className="form-submit__label" htmlFor="name-input">
                 _name:
