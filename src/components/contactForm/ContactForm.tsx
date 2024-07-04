@@ -74,13 +74,12 @@ const ContactForm = () => {
       if (error instanceof Error) {
         const stringifyError = String(error);
         setFormError(stringifyError);
+        clearTimeout(timeout);
       }
     } finally {
-      () => {
-        clearTimeout(timeout);
-        setSendMailStatus("");
-        reset();
-      };
+      reset();
+      clearTimeout(timeout);
+      setSendMailStatus("Success");
     }
   };
 
