@@ -58,10 +58,11 @@
       height: 2rem;
       width: 2rem;
       transition: all 0.2s;
-    }
-    .frameWork-text {
-      font-size: 2rem;
-      transition: all 0.2s;
+      overflow: hidden;
+      .frameWork-text {
+        font-size: 2rem;
+        transition: all 0.2s;
+      }
     }
   }
 }
