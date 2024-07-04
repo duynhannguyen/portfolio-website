@@ -111,7 +111,7 @@ const ContactForm = () => {
                 <span className="form-submit__error-text"> {formError} </span>
               )}
               {sendMailStatus === "Delayed" && (
-                <span className="form-submit__error-text">
+                <span className="form-submit__error-text__warning">
                   {" "}
                   This response is taking longer than normal, please wait
                   &#128549;{" "}
