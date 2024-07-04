@@ -53,6 +53,7 @@
 .contact-form__submit .form-submit__error-text {
   font-size: 1.3rem;
   vertical-align: middle;
+  color: #ff000f;
 }
 .contact-form__submit .form-submit__textarea {
   width: 100%;

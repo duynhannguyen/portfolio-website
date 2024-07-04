@@ -17,6 +17,7 @@ const ContactForm = () => {
     email: "",
     message: "",
   });
+  const [formError, setFormError] = useState("");
   const [sendMailSuccess, setSendMailSuccess] = useState(false);
   const {
     register,
@@ -56,17 +57,23 @@ const ContactForm = () => {
 
   const onSubmit = async (data: FormEmailValues) => {
     try {
-      setFormLoading(true);
+      setFormError("");
       setSendMailSuccess(false);
 
       const sendMail = await MailAPI.sendMail(data);
       if (sendMail.status === 200) {
         setSendMailSuccess(true);
       }
+      if (sendMail.status !== 200) {
+        throw new Error(sendMail.data);
+      }
     } catch (error) {
       console.log("error", error);
+      if (error instanceof Error) {
+        const stringifyError = String(error);
+        setFormError(stringifyError);
+      }
     } finally {
-      setFormLoading(false);
       reset();
     }
   };
@@ -93,76 +100,82 @@ const ContactForm = () => {
             </button>
           </div>
         ) : (
-          <form onSubmit={handleSubmit(onSubmit)} className="form-submit">
-            <label className="form-submit__label" htmlFor="name-input">
-              _name:
-            </label>
-            <input
-              {...register("name", {
-                required: "This input is required",
-              })}
-              className="form-submit__input"
-              placeholder=""
-              id="name-input"
-              type="text"
-              aria-invalid={errors.name ? "true" : "false"}
-            />
-            <div className="form-submit__error">
-              {errors.name && (
-                <p className="form-submit__error-text">
-                  {" "}
-                  {errors.name.message}{" "}
-                </p>
+          <>
+            <form onSubmit={handleSubmit(onSubmit)} className="form-submit">
+              {formError && (
+                <span className="form-submit__error-text"> {formError} </span>
               )}
-            </div>
-
-            <label className="form-submit__label" htmlFor="email-input">
-              _email:
-            </label>
-            <input
-              {...register("email", {
-                required: "This input is required",
-                pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-              })}
-              className="form-submit__input"
-              placeholder=""
-              id="email-input"
-              type="text"
-            />
-            <div className="form-submit__error">
-              {errors.email && (
-                <p className="form-submit__error-text">
-                  {" "}
-                  {errors.email.message}{" "}
-                  {errors.email.type === "pattern" && "Invalid email address "}
-                </p>
-              )}
-            </div>
-            <label className="form-submit__label" htmlFor="message-area">
-              _message:
-            </label>
-            <textarea
-              {...register("message", {
-                required: "This input is required",
-              })}
-              maxLength={350}
-              autoFocus
-              className="form-submit__textarea"
-            ></textarea>
-            <div className="form-submit__error">
-              {errors.message && (
-                <p className="form-submit__error-text">
-                  {" "}
-                  {errors.message.message}{" "}
-                </p>
-              )}
-            </div>
-            <button type="submit" className="form-submit__btn">
-              <div className="form-submit__btn-text">
-                {isSubmitting ? <Loading /> : "_Send-message"}
+              <label className="form-submit__label" htmlFor="name-input">
+                _name:
+              </label>
+              <input
+                {...register("name", {
+                  required: "This input is required",
+                })}
+                className="form-submit__input"
+                placeholder=""
+                id="name-input"
+                type="text"
+                aria-invalid={errors.name ? "true" : "false"}
+              />
+              <div className="form-submit__error">
+                {errors.name && (
+                  <p className="form-submit__error-text">
+                    {" "}
+                    {errors.name.message}{" "}
+                  </p>
+                )}
               </div>
-            </button>
-          </form>
+
+              <label className="form-submit__label" htmlFor="email-input">
+                _email:
+              </label>
+              <input
+                {...register("email", {
+                  required: "This input is required",
+                  pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                })}
+                className="form-submit__input"
+                placeholder=""
+                id="email-input"
+                type="text"
+              />
+              <div className="form-submit__error">
+                {errors.email && (
+                  <p className="form-submit__error-text">
+                    {" "}
+                    {errors.email.message}{" "}
+                    {errors.email.type === "pattern" &&
+                      "Invalid email address "}
+                  </p>
+                )}
+              </div>
+              <label className="form-submit__label" htmlFor="message-area">
+                _message:
+              </label>
+              <textarea
+                {...register("message", {
+                  required: "This input is required",
+                })}
+                maxLength={350}
+                autoFocus
+                className="form-submit__textarea"
+              ></textarea>
+              <div className="form-submit__error">
+                {errors.message && (
+                  <p className="form-submit__error-text">
+                    {" "}
+                    {errors.message.message}{" "}
+                  </p>
+                )}
+              </div>
+              <button type="submit" className="form-submit__btn">
+                <div className="form-submit__btn-text">
+                  {isSubmitting ? <Loading /> : "_Send-message"}
+                </div>
+              </button>
+            </form>
+          </>
         )}
       </div>
       <div className="contact-form__preview">

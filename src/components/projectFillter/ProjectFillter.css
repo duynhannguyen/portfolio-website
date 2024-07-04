@@ -53,8 +53,9 @@
   height: 2rem;
   width: 2rem;
   transition: all 0.2s;
+  overflow: hidden;
 }
-.fillter-option-text .frameWork-text {
+.fillter-option-text .frameWork-icon .frameWork-text {
   font-size: 2rem;
   transition: all 0.2s;
 }/*# sourceMappingURL=ProjectFillter.css.map */
