@@ -2,4 +2,10 @@
   width: 5%;
   min-width: 5%;
   height: inherit;
+}
+@media (max-width: 768px) {
+  .navigate-section-wrap {
+    width: 40px;
+    min-width: 40px;
+  }
 }/*# sourceMappingURL=NavigateSection.css.map */

@@ -16,7 +16,9 @@
     align-content: center;
     text-align: center;
     position: relative;
-
+    @media (max-width: 768px) {
+      font-size: 1.8rem;
+    }
     @include slide-in($left: "true");
     .icon-element-active {
       color: #ffffffab;

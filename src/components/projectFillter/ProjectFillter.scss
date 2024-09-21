@@ -59,9 +59,12 @@
       width: 2rem;
       transition: all 0.2s;
       overflow: hidden;
-      .frameWork-text {
-        font-size: 2rem;
-        transition: all 0.2s;
+    }
+    .frameWork-text {
+      font-size: 2rem;
+      transition: all 0.2s;
+      @media (max-width: 1024px) {
+        font-size: 1.5rem;
       }
     }
   }

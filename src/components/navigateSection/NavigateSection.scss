@@ -2,4 +2,8 @@
   width: 5%;
   min-width: 5%;
   height: inherit;
+  @media (max-width: 768px) {
+    width: 40px;
+    min-width: 40px;
+  }
 }

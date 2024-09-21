@@ -1,6 +1,9 @@
 .main-section-wrap {
   display: flex;
   height: 100%;
+  @media (max-width: 768px) {
+    position: relative;
+  }
   .content-container {
     flex-grow: 1;
   }

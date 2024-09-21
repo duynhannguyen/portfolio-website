@@ -193,7 +193,7 @@ const FolderStructure = ({
   ]);
 
   return (
-    <section className="">
+    <section className="folder-structure-wrap">
       <div className="title">{folderTitle}</div>
       <div className="folder-wrap">{showFolderByTitle()}</div>
     </section>

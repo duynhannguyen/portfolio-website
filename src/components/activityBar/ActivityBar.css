@@ -17,6 +17,11 @@
   transition: all 0.4s;
   animation: slide-from-left 0.4s;
 }
+@media (max-width: 768px) {
+  .activity-bar-wrap .icon-element {
+    font-size: 1.8rem;
+  }
+}
 @keyframes slide-from-left {
   0% {
     opacity: 0;

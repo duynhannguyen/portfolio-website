@@ -24,7 +24,7 @@ const ProjectFillter = ({
           <label htmlFor={tech.name} className="checkbox-label"></label>
           <label htmlFor={tech.name} className="fillter-option-text">
             <div className="frameWork-icon">{tech.icon}</div>
-            <span className="frameWork-text">{tech.name}</span>
+            <div className="frameWork-text">{tech.name}</div>
           </label>
         </div>
       ))}
