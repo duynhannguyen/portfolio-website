@@ -3,9 +3,8 @@
   min-width: 5%;
   height: inherit;
 }
-@media (max-width: 768px) {
+@media (max-width: 640px) {
   .navigate-section-wrap {
-    width: 40px;
-    min-width: 40px;
+    width: 100%;
   }
 }/*# sourceMappingURL=NavigateSection.css.map */

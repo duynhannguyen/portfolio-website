@@ -2,7 +2,6 @@
 @import "../../mixin";
 
 .folder-structure-wrap {
-  // position: absolute;
 }
 
 .folder-expand {
@@ -20,6 +19,16 @@
     width: 200px;
     min-width: 200px;
   }
+  @media (max-width: 640px) {
+    position: relative;
+    width: 100%;
+    min-width: 100%;
+    @include expandOnSmall();
+    background: $bgDarkMode;
+    left: 0;
+    border-right: 0px;
+    border-bottom: 0px;
+  }
 }
 .folder-collaspe {
   @include collapse();
@@ -27,6 +36,9 @@
     position: absolute;
     left: 40px;
     z-index: 1;
+    background: $bgDarkMode;
+  }
+  @media (max-width: 640px) {
     background: $bgDarkMode;
   }
 }
@@ -38,9 +50,16 @@
   padding: 0.4rem 0;
   @include drawBorder($bottom: "true", $bcolor: $borderDarkMode);
   width: 100%;
+  @media (max-width: 640px) {
+    @include drawBorder($top: "true", $bcolor: $borderDarkMode);
+  }
 }
 .folder-wrap {
   padding: 1rem;
+  @media (max-width: 640px) {
+    overflow-x: scroll;
+    scrollbar-width: none;
+  }
 }
 
 .folder-structure {

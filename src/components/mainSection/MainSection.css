@@ -5,6 +5,12 @@
 @media (max-width: 768px) {
   .main-section-wrap {
     position: relative;
+    flex-direction: row;
+  }
+}
+@media (max-width: 640px) {
+  .main-section-wrap {
+    flex-direction: column;
   }
 }
 .main-section-wrap .content-container {

@@ -91,6 +91,20 @@
   transition: all 0.4s;
   animation: expand 0.4s;
 }
+@mixin expandOnSmall() {
+  @keyframes expand {
+    0% {
+      width: 0%;
+      min-width: 0%;
+    }
+    100% {
+      width: 100%;
+      min-width: 100%;
+    }
+  }
+  transition: all 0.4s;
+  animation: expand 0.4s;
+}
 
 @mixin collapse() {
   @keyframes collapse {

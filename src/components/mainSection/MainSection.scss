@@ -3,6 +3,10 @@
   height: 100%;
   @media (max-width: 768px) {
     position: relative;
+    flex-direction: row;
+  }
+  @media (max-width: 640px) {
+    flex-direction: column;
   }
   .content-container {
     flex-grow: 1;

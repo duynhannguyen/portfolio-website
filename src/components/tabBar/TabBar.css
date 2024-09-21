@@ -1,5 +1,6 @@
 .tab-bar-wrap {
   border-bottom: 2px solid #00337c;
+  border-top: 2px solid #00337c;
   display: flex;
 }
 .tab-bar-wrap .active-tab-container {
@@ -17,11 +18,21 @@
   cursor: pointer;
   transition: all 0.4s;
 }
+@media (max-width: 768px) {
+  .tab-bar-wrap .tab-container {
+    gap: 0.2rem;
+  }
+}
 .tab-bar-wrap .tab-container .close-mark {
   visibility: hidden;
-  min-width: 2rem;
+  min-width: 1.5rem;
   text-align: center;
   color: white;
+}
+@media (max-width: 768px) {
+  .tab-bar-wrap .tab-container .close-mark {
+    font-size: 1rem;
+  }
 }
 .tab-bar-wrap .tab-container .close-mark:hover {
   border-radius: 0.4rem;

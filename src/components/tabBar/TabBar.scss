@@ -2,6 +2,7 @@
 @import "../../mixin";
 .tab-bar-wrap {
   @include drawBorder($bottom: "true", $bcolor: $borderDarkMode);
+  @include drawBorder($top: "true", $bcolor: $borderDarkMode);
   display: flex;
   .active-tab-container {
     color: white;
@@ -17,11 +18,17 @@
     justify-content: space-between;
     cursor: pointer;
     transition: all 0.4s;
+    @media (max-width: 768px) {
+      gap: 0.2rem;
+    }
     .close-mark {
       visibility: hidden;
-      min-width: 2rem;
+      min-width: 1.5rem;
       text-align: center;
       color: white;
+      @media (max-width: 768px) {
+        font-size: 1rem;
+      }
       &:hover {
         border-radius: 0.4rem;
         background-color: rgba($color: $textDarkMode, $alpha: 0.8);

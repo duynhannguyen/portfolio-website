@@ -12,7 +12,7 @@ const ProjectFillter = ({
 }: ProjectFillterProps) => {
   techList.sort((item1, item2) => item1.name.localeCompare(item2.name));
   return (
-    <div>
+    <div className="fillter-option-wrap">
       {techList.map((tech) => (
         <div key={tech.name} className="fillter-option">
           <input
