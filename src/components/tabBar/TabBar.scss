@@ -4,6 +4,10 @@
   @include drawBorder($bottom: "true", $bcolor: $borderDarkMode);
   @include drawBorder($top: "true", $bcolor: $borderDarkMode);
   display: flex;
+  @media (max-width: 640px) {
+    overflow-x: scroll;
+    scrollbar-width: none;
+  }
   .active-tab-container {
     color: white;
     background-color: $hightLightDarkMode;
@@ -20,6 +24,9 @@
     transition: all 0.4s;
     @media (max-width: 768px) {
       gap: 0.2rem;
+    }
+    @media (max-width: 640px) {
+      min-width: 13rem;
     }
     .close-mark {
       visibility: hidden;

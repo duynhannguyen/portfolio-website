@@ -10,5 +10,10 @@
   .tab-bar-section {
     height: 3.2rem;
     width: 100%;
+    @media (max-width: 640px) {
+      // overflow-x: scroll;
+      height: 5rem;
+      scrollbar-width: none;
+    }
   }
 }

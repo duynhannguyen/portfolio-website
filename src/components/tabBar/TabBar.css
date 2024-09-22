@@ -3,6 +3,12 @@
   border-top: 2px solid #00337c;
   display: flex;
 }
+@media (max-width: 640px) {
+  .tab-bar-wrap {
+    overflow-x: scroll;
+    scrollbar-width: none;
+  }
+}
 .tab-bar-wrap .active-tab-container {
   color: white;
   background-color: #03c988;
@@ -21,6 +27,11 @@
 @media (max-width: 768px) {
   .tab-bar-wrap .tab-container {
     gap: 0.2rem;
+  }
+}
+@media (max-width: 640px) {
+  .tab-bar-wrap .tab-container {
+    min-width: 13rem;
   }
 }
 .tab-bar-wrap .tab-container .close-mark {

@@ -16,6 +16,8 @@
   .activity-bar-wrap {
     flex-direction: row;
     width: 100%;
+    justify-content: center;
+    align-items: center;
   }
 }
 .activity-bar-wrap .icon-element {

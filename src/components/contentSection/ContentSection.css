@@ -9,4 +9,10 @@
 .content-section-container .tab-bar-section {
   height: 3.2rem;
   width: 100%;
+}
+@media (max-width: 640px) {
+  .content-section-container .tab-bar-section {
+    height: 5rem;
+    scrollbar-width: none;
+  }
 }/*# sourceMappingURL=ContentSection.css.map */
