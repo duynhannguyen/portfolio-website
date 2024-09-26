@@ -29,6 +29,9 @@
   width: 50%;
   font-size: 2.2rem;
   text-align: left;
+  overflow-y: scroll;
+  height: 550px;
+  scrollbar-width: none;
 }
 @media (max-width: 1400px) {
   .introdution {
@@ -47,6 +50,15 @@
   }
 }
 
+.details-summary {
+  color: #03c988;
+  cursor: pointer;
+}
+
+.details-contents {
+  padding-left: 2rem;
+}
+
 .my-life-obj {
   width: 50%;
   text-align: center;
@@ -54,6 +66,12 @@
 @media (max-width: 1400px) {
   .my-life-obj {
     height: 80%;
+    width: 80%;
+  }
+}
+@media (max-width: 1280px) {
+  .my-life-obj {
+    height: 500px;
     width: 80%;
   }
 }
