@@ -177,6 +177,32 @@ export const projectList = [
       "MongoDB",
     ],
   },
+  {
+    projectName: "_Todo-list",
+    projectImg: {
+      front: "../todo-list-img/todo-list-front.png",
+      back: "../todo-list-img/todo-list-back.png",
+    },
+    projectDescr: "A simple todo list",
+    projectLink: {
+      gitHub: "https://github.com/duynhannguyen/todo-list",
+      live: "https://todo-list-ruddy-beta.vercel.app/",
+    },
+    projectTag: ["HTML", "CSS", "JavaScript"],
+  },
+  {
+    projectName: "_Beat-maker",
+    projectImg: {
+      front: "../beat-maker-img/beat-maker-front.png",
+      back: "../beat-maker-img/beat-maker-back.png",
+    },
+    projectDescr: "Making beat from given sounds",
+    projectLink: {
+      gitHub: "https://github.com/duynhannguyen/beat-maker",
+      live: "https://beat-maker-psi.vercel.app/",
+    },
+    projectTag: ["HTML", "CSS", "JavaScript"],
+  },
 ];
 
 export const techList = [
