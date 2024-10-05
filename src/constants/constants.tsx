@@ -88,7 +88,13 @@ export const projectList = [
       gitHub: "https://github.com/duynhannguyen/Ecommerce-NextJS",
       live: "https://www.shopandgo.online/",
     },
-    projectTag: ["NextJS", "TailwindCss", "Stripe", "PostgresSQL"],
+    projectTag: [
+      "NextJS",
+      "TailwindCss",
+      "Stripe",
+      "PostgresSQL",
+      "TypeScript",
+    ],
   },
   {
     projectName: "_Weather-app",
