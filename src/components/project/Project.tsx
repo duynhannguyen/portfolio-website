@@ -10,14 +10,15 @@ const Project = ({ myProjects }: ProjectProps) => {
   return (
     <div className="project-wrap">
       {myProjects.map((project, index) => (
-        <ProjectCard
-          key={index}
-          projectName={project.projectName}
-          projectImg={project.projectImg}
-          projectDescr={project.projectDescr}
-          projectLink={project.projectLink}
-          projectTag={project.projectTag}
-        />
+        <div key={index}>
+          <ProjectCard
+            projectName={project.projectName}
+            projectImg={project.projectImg}
+            projectDescr={project.projectDescr}
+            projectLink={project.projectLink}
+            projectTag={project.projectTag}
+          />
+        </div>
       ))}
     </div>
   );

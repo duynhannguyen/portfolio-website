@@ -89,7 +89,7 @@ const MainSection = () => {
         }
         return tabs;
       });
-      console.log("showLastFile", showLastFile);
+
       setFolderTitle("");
       setShowTabBar(showLastFile);
       if (showLastFile.length === 1) {

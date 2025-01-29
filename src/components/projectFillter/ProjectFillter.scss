@@ -70,6 +70,10 @@
     .frameWork-text {
       font-size: 2rem;
       transition: all 0.2s;
+
+      @media (max-width: 1280px) {
+        font-size: 1.8rem;
+      }
       @media (max-width: 1024px) {
         font-size: 1.5rem;
       }
