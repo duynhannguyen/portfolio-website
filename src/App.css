@@ -3,7 +3,7 @@
 }
 
 .app-wrap {
-  height: inherit;
+  height: 100vh;
   display: flex;
   flex-direction: column;
 }

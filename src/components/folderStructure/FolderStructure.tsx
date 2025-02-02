@@ -79,7 +79,6 @@ const FolderStructure = ({
           }
           return item;
         });
-        console.log("activeCurrentFile", activeCurrentFile);
         return setShowTabBar(activeCurrentFile);
       }
       const listKey = fileListChildren.flat();
