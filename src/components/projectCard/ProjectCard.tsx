@@ -14,6 +14,7 @@ const ProjectCard = ({
 }: ProjectCardProps) => {
   const [isLoaded, setIsLoaded] = useState(false);
   useEffect(() => {
+    setIsLoaded(false);
     window.addEventListener("load", () => {
       setIsLoaded(true);
     });
